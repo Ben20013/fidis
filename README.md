@@ -1,5 +1,3 @@
-<p align="center"><img src="http://www.mixlinker.com/img/zwl_logo.png"></p>
-
 ## 关于FIDIS
 
 FIDIS（全称Flexible information data integrate system，柔性信息与数据集成系统），作为智物联工业物联网体系中的应用系统平台，承担着MixIOT应用数据的展示，以及与MixIOT系统的操作和交互。
