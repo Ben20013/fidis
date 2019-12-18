@@ -1,0 +1,239 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../common.scss";
+@import "../icon.scss";
+@import "../dialog.scss";
+.cont-box {
+    flex: 1;
+    padding: 16px;
+    overflow: hidden;
+    .detail-container {
+        height: 100%;
+        max-height: 100%;
+        .title-wrap {
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #dddddd;
+            padding: 0 20px;
+            background-color: #ffffff;
+            align-items: center;
+            @include flex-pack-justify();
+            .title {
+                display: inline-block;
+                font-family: MicrosoftYaHei;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 28px;
+                letter-spacing: 0px;
+                color: #111111;
+            }
+            .btn-wrap {
+                justify-content: flex-end;
+                align-items: center;
+        .edit-btn,.delete-btn{
+                    width: 32px;
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: center;
+                    background-color: #ffffff;
+                    border-radius: 2px;
+                    border: solid 1px #dddddd;
+                    margin-left: 10px;
+          i{vertical-align: -3px;}
+                }
+            }
+        }
+        .content-wrap {
+            flex: 1;
+            overflow: hidden;
+            .info-container {
+                padding: 0 20px;
+                background-color: #ffffff;
+                .info-content-wrap {
+                    padding-bottom: 40px;
+                    flex-wrap: wrap;
+                    .info-item {
+                        width: calc(20% - 16px);
+                        margin-top: 24px;
+                        padding-left: 16px;
+                        font-family: MicrosoftYaHei;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        line-height: 24px;
+                        letter-spacing: 0px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        &.desc {
+                            width: calc(80% - 16px);
+                        }
+                        .name {
+                            color: #999999;
+                        }
+                        .value {
+                            color: #333333;
+                            &.num {
+                                font-family: Arial-BoldMT;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//编辑
+.edit-user {
+    width: 785px;
+    .md-content {
+        background: #fff;
+        position: relative;
+        .contentBox {
+            padding: 20px;
+            .mg-top {
+                margin-top: -10px!important;
+            }
+            .contL {
+                flex: 1;
+                padding-right: 10px;
+                .title {
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                    color: #666666;
+                    margin-top: 5px;
+                }
+                .inputCont {
+                    width: 300px;
+                    padding-left: 20px;
+                    height: 36px;
+                    border-radius: 2px;
+                    border: solid 1px #e5e5e5;
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    letter-spacing: 0px;
+                    color: #333333;
+                }
+            }
+            .contR {
+                flex: 1;
+                padding-left: 10px;
+                .checkbox {
+                  height: 36px;
+                }
+                .title {
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                    color: #666666;
+                    margin-top: 5px;
+                }
+                .inputCont {
+                    margin-left: 20px;
+                    width: 300px;
+                    padding-left: 20px;
+                    height: 36px;
+                    border-radius: 2px;
+                    border: solid 1px #e5e5e5;
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    letter-spacing: 0px;
+                    color: #333333;
+                }
+            }
+            .textBox {
+                @include flex-pack-justify();
+                font-family: MicrosoftYaHei;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 60px;
+                letter-spacing: 0px;
+                color: #666666;
+                padding: 0 20px 0 0;
+            }
+            .serviceDescriptionT {
+                font-family: MicrosoftYaHei;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 28px;
+                letter-spacing: 0px;
+                color: #666666;
+                margin-left: 0px;
+                margin-top: 0px;
+            }
+            .serviceDescription {
+                width: 675px;
+                height: 40px;
+                padding: 15px;
+                border-radius: 2px;
+                border: solid 1px #e5e5e5;
+                margin: 0 0 0 0px;
+            }
+            .aLineBox {
+                .aLineBoxL {
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                    color: #666666;
+
+                    margin-top: 5px;
+                }
+                .aLineBoxR {
+                    width: 97%;
+                    margin: 0 20px 0 0;
+                }
+            }
+        }
+    }
+}
+// 删除
+.delete {
+    .md-content {
+        background: #fff;
+        .contentBox {
+            font-family: MicrosoftYaHei;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 24px;
+            letter-spacing: 0px;
+            color: #333333;
+            margin: 20px 0 0 20px;
+        }
+        .btn_cancel {
+            margin-left: 10px;
+        }
+    }
+}

@@ -1,0 +1,609 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../../sass/common.scss";
+@import "../../../sass/icon.scss";
+@import "../../../sass/dialog.scss";
+$path: '';
+//历史记录
+.history-content-wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	.content {
+		flex: 1;
+		background-color: #ffffff;
+		overflow: hidden;
+		.button-tool {
+			height: 77px;
+			line-height: 77px;
+			padding: 0 20px;
+			align-items: center;
+			.txt {
+				font-family: MicrosoftYaHei;
+				font-size: 14px;
+				font-weight: normal;
+				font-stretch: normal;
+				letter-spacing: 0px;
+				color: #666666;
+			}
+			.block {
+				display: inline-block;
+				height: 32px;
+				line-height: 32px;
+				&:not(:first-child) {
+					margin-left: 10px;
+				}
+			}
+			.search-btn-wrap {
+				width: 32px;
+				height: 32px;
+				line-height: 38px;
+				background-color: #4162ff;
+				border-radius: 0 2px 2px 0;
+				font-family: MicrosoftYaHei;
+				font-size: 13px;
+				font-weight: normal;
+				font-stretch: normal;
+				letter-spacing: 0px;
+				color: #f7f7f7;
+				text-align: center;
+				cursor: pointer;
+				&:hover,
+				&:active {
+					background-color: #6781fd;
+				}
+				span {
+					display: inline-block;
+				}
+			}
+			.select-header-btn {
+				height: 32px;
+				line-height: 32px;
+				background-color: #242d3d;
+				color: #ffffff;
+				border-radius: 2px;
+				margin-left: 10px;
+				padding: 0 10px;
+				cursor: pointer;
+				&:hover,
+				&:active {
+					opacity: 0.8;
+				}
+				span {
+					font-family: MicrosoftYaHei;
+					font-size: 13px;
+					font-weight: normal;
+					font-stretch: normal;
+					line-height: 28px;
+					letter-spacing: 0px;
+					color: #ffffff;
+				}
+			}
+			.refresh-wrap,
+			.line-wrap,
+			.export-wrap {
+				width: 30px;
+				height: 30px;
+				line-height: 38px;
+				border-radius: 2px;
+				border: 1px solid #dddddd;
+				background-color: #f9f9f9;
+				text-align: center;
+				margin-left: 10px;
+				cursor: pointer;
+				&:hover,
+				&:active {
+					background-color: #ffffff;
+				}
+			}
+		}
+		.record-list {
+			flex: 1;
+			overflow: hidden;
+			padding: 0 20px;
+			.table-wrap {
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+			}
+			table tr {
+				th {
+					height: 30px;
+					line-height: 18px;
+					font-weight: normal;
+					text-align: left;
+					color: #999999;
+					@include overEllipsis();
+					border-bottom: 1px solid #e5e5e5;
+					width: 120px;
+					&:first-child {
+						padding-left: 16px;
+					}
+				}
+				td {
+					height: 49px;
+					width: 120px;
+					@include overEllipsis();
+					border-bottom: 1px solid #e5e5e5;
+					&:first-child {
+						padding-left: 16px;
+					}
+				}
+				&:nth-child(2n) {
+					background-color: #f8fafd;
+				}
+			}
+		}
+		.export-action{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 38px;
+			border-radius: 2px;
+			border: 1px solid #dddddd;
+			background-color: #f9f9f9;
+			text-align: center;
+			margin-left: 10px;
+			cursor: pointer;
+			&:hover,
+			&:active {
+				background-color: #ffffff;
+			}
+			&.disabled{
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+		}
+	}
+	.button-tool__left{
+		flex: 1;
+	}
+	.button-tool__right{
+		width: 200px;
+	}
+	.tool__content{
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		overflow: hidden;
+	}
+	.tool__interval{
+		width: 153px;
+		height: 30px;
+		margin-left: 10px;
+		padding: 0 12px;
+		background-color: #ffffff;
+		border-radius: 2px;
+		border: solid 1px #dddddd;
+		align-items: center;
+		&:hover{
+			border-color: #999999;
+		}
+		&.active, &.active:hover{
+			border-color: #4162ff
+		}
+	}
+	.tool__interval_txt{
+		margin-right: 20px;
+		font-family: MicrosoftYaHei;
+		font-size: 13px;
+		font-weight: normal;
+		font-stretch: normal;
+		line-height: 28px;
+		letter-spacing: 0.5px;
+		color: #333333;
+		white-space: nowrap;
+	}
+	.tool__interval_input-wrap{
+		flex: 1;
+	}
+	.tool__interval_input{
+		width: 100%;
+		height: 100%;
+		border: none;
+		outline: none;
+		font-family: MicrosoftYaHei;
+		font-size: 13px;
+		font-weight: normal;
+		font-stretch: normal;
+		line-height: 32px;
+		letter-spacing: 0.5px;
+		color: #999999;
+	}
+	.tool__tab-btn{
+		width: 92px;
+		height: 32px;
+		line-height: 32px;
+		text-align: center;
+		background-color: #ffffff;
+		border: solid 1px #ececec;
+		font-family: MicrosoftYaHei;
+		font-size: 13px;
+		font-weight: normal;
+		font-stretch: normal;
+		letter-spacing: 0.5px;
+		color: #333333;
+		cursor: default;
+		&.left{
+			border-radius: 2px 0px 0px 2px;
+		}
+		&.right{
+			border-radius: 0px 2px 2px 0px;
+		}
+		&.active{
+			border-color: #4162ff;
+			background-color: #4162ff;
+			color: #ffffff;
+		}
+	}
+}
+
+.page-btn {
+	height: 60px;
+	width: 100%;
+	// background-color: #fff;
+	align-items: center;
+	@include flex-pack-end();
+	overflow: hidden;
+	.mixBtn {
+		height: 26px;
+		line-height: 26px;
+		padding: 3px 10px;
+		margin-left: 10px;
+		background-color: #ffffff;
+		border: solid 1px #e5e5e5;
+		border-radius: 2px;
+		text-align: center;
+		cursor: default;
+		font-family: MicrosoftYaHei;
+		font-size: 12px;
+		font-weight: normal;
+		font-stretch: normal;
+	}
+	.active {
+		background-color: #3bbc6a;
+		color: #f7f7f7;
+	}
+}
+
+// 设备历史-表头设置
+.setting-table-header {
+	width: 1000px;
+	height: 700px;
+	max-height: 700px;
+	overflow: hidden;
+	.md-content {
+		background-color: #ffffff;
+		height: 100%;
+		overflow: hidden;
+		.contBox {
+			position: absolute;
+			top: 53px;
+			bottom: 80px;
+			width: calc(100% - 40px);
+			padding: 15px 20px 20px 20px;
+			overflow: hidden;
+			.setting-wrap {
+				flex-wrap: wrap;
+				.item {
+					min-width: calc( (100% - 40px) / 4 );
+					// height:33px;
+					line-height: 33px;
+					margin-right: 10px;
+					span {
+						margin-left: 3px;
+					}
+				}
+			}
+		}
+		.buttomBox {
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+		}
+	}
+	.ck-box {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		border: solid 1px #e5e5e5;
+		border-radius: 50%;
+		vertical-align: middle;
+		&.checked {
+			width: 4px;
+			height: 4px;
+			border: solid 5px #4162ff;
+		}
+	}
+	.params__content{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		&_left{
+			flex: 1;
+		}
+		&_right{
+			width: 300px;
+			margin-left: 38px;
+		}
+	}
+	.params__header, .program__header{
+		margin-bottom: 15px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header__item{
+		font-family: MicrosoftYaHei;
+		font-size: 13px;
+		font-weight: normal;
+		font-stretch: normal;
+		line-height: 28px;
+		letter-spacing: 0.5px;
+		color: #333333;
+		&.select-btn{
+			color: #4162ff;
+			cursor: pointer;
+		}
+	}
+	.params__body{
+		flex: 1;
+		padding: 16px 6px 16px 16px;
+		border-radius: 2px;
+		border: solid 1px #dddddd;
+		overflow-x: hidden;
+		overflow-y: auto;
+		&::-webkit-scrollbar {
+			width: 5px;     
+			height: 1px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 1px;
+			box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			background: #8a8a8a;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			background: #aeb5c4;
+		}
+	}
+	.program__body{
+		flex: 1;
+		border-radius: 2px;
+		border: solid 1px #dddddd;
+		overflow-x: hidden;
+		overflow-y: auto;
+		&::-webkit-scrollbar {
+			width: 5px;     
+			height: 1px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 1px;
+			box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			background: #8a8a8a;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			background: #aeb5c4;
+		}
+	}
+	.program__item{
+		height: 49px;
+		padding: 0 15px;
+		border-bottom: 1px solid #eeeeee;
+		align-items: center;
+		justify-content: space-between;
+		&.active{
+			background-color: #fbfcfe;
+		}
+		.item__name{
+			flex: 1;
+			align-items: center;
+			&_txt{
+				margin-left: 12px;
+				font-family: MicrosoftYaHei;
+				font-size: 12px;
+				font-weight: normal;
+				font-stretch: normal;
+				line-height: 28px;
+				letter-spacing: 0.5px;
+				color: #666666;
+			}
+			&_input{
+				height: 28px;
+				font-family: MicrosoftYaHei;
+				font-size: 12px;
+				font-weight: normal;
+				font-stretch: normal;
+				line-height: 28px;
+				letter-spacing: 0.5px;
+				color: #666666;
+			}
+		}
+		.item__button,.item__button_add{
+			width: 31px;
+			height: 31px;
+			line-height: 36px;
+			border-radius: 2px;
+			border: solid 1px #dddddd;
+			text-align: center;
+		}
+		.item__button{
+			margin-left: 10px;
+		}
+		.item__button_add{
+			margin: 0 auto;
+		}
+	}
+	.params__search{
+		position: relative;
+		width: 165px;
+		height: 32px;
+		margin-left: 16px;
+		&_input{
+			width: 160px;
+			height: 28px;
+			border: 1px solid #dddddd;
+			background-color: #ffffff;
+			outline: none;
+			&:focus{
+				border-color: #4162ff;
+			}
+		}
+		&_icon{
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: 4px;
+			right: 12px;
+			text-align: center;
+		}
+	}
+}
+
+// 设备历史-数据曲线
+.dataCurvewin {
+	width: 1000px;
+	.md-content {
+		background-color: #ffffff;
+		.contBox {
+			padding: 20px 0px;
+			.data-curve-wrap {
+				.top-content {
+					padding: 0 20px;
+					align-items: center;
+					.collect-time {
+						// flex: 1;
+						align-items: center;
+						margin-left: 30px;
+						.block {
+							display: inline-block;
+							&:not(:first-child) {
+								margin-left: 5px;
+							}
+						}
+						.search-btn-wrap {
+							width: 36px;
+							height: 36px;
+							line-height: 42px;
+							background-color: #4162ff;
+							border-radius: 0 2px 2px 0;
+							font-family: MicrosoftYaHei;
+							font-size: 13px;
+							font-weight: normal;
+							font-stretch: normal;
+							letter-spacing: 0px;
+							color: #f7f7f7;
+							text-align: center;
+							cursor: pointer;
+							&:hover,
+							&:active {
+								background-color: #6781fd;
+							}
+							span {
+								display: inline-block;
+							}
+						}
+						.warn-btn {
+							height: 36px;
+							line-height: 36px;
+							background-color: #242d3d;
+							color: #ffffff;
+							border-radius: 2px;
+							margin-left: 10px;
+							padding: 0 10px;
+							cursor: pointer;
+							&:hover,
+							&:active {
+								opacity: 0.8;
+							}
+							span {
+								font-family: MicrosoftYaHei;
+								font-size: 13px;
+								font-weight: normal;
+								font-stretch: normal;
+								line-height: 28px;
+								letter-spacing: 0px;
+								color: #ffffff;
+							}
+						}
+					}
+					.download-btn {
+						display: inline-block;
+						width: 34px;
+						height: 34px;
+						vertical-align: middle;
+						background: url($path+'/modules/pro/static/image/device/download_icon.png') no-repeat center center;
+						background-color: #ffffff;
+						border-radius: 2px;
+						border: solid 1px #dddddd;
+						margin-top: -2px;
+						margin-left: 10px;
+						cursor: pointer;
+						&:active,
+						&:hover {
+							background-color: #f9f9f9;
+						}
+					}
+				}
+				.middle-content {
+					height: 400px;
+					margin-top: 30px;
+					&>div {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.bottom-content {
+					height: 36px;
+					line-height: 36px;
+					margin-top: 20px;
+					padding: 0 30px;
+					.select-item {
+						width: 20%;
+						height: 100%;
+						padding: 0 9px;
+						&:first-child {
+							padding-left: 0;
+						}
+						&:last-child {
+							padding-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//无数据
+.no-data {
+	width: 100%;
+	height: 100%;
+	@include flex-pack-center();
+	align-items: center;
+	span {
+		margin-top: 24px;
+		font-size: 14px;
+		color: #999999;
+	}
+}

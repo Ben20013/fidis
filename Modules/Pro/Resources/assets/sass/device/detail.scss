@@ -1,0 +1,151 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../common.scss";
+@import "../icon.scss";
+@import "../dialog.scss";
+.cont-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .title-wrap {
+        height: 60px;
+        // height: 117px;
+        padding: 0 20px;
+        background-color: #ffffff;
+        box-shadow: 0px 5px 8px -5px #bbbbbb inset;
+        align-items: center;
+        .title {
+            height: 18px;
+            font-family: MicrosoftYaHei;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #111111;
+            margin-top: 24px;
+        }
+        .nav-wrap {
+            flex: 1;
+            justify-content: flex-end;
+            height: 100%;
+            .menu-wrap {
+                .menu-item {
+                    cursor: pointer;
+                    margin-left: 40px;
+                    text-align: center;
+                    justify-content: space-between;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &.active {
+                        color: #111111;
+                    }
+                    &:active {
+                        opacity: 0.5;
+                    }
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                    .txt {
+                        height: 16px;
+                        line-height: 16px;
+                        font-family: MicrosoftYaHei;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        letter-spacing: 0px;
+                        color: #333333;
+                    }
+                    .buttom-choose {
+                        margin-top: 10px;
+                        height: 3px;
+                        width: 100%;
+                        background-color: #5387ff;
+                    }
+                }
+            }
+        }
+        .btn-wrap{
+          .common-btn{
+            float: right;
+            // width: 92px;
+            padding: 0 10px;
+          	height: 32px;
+            line-height: 32px;
+          	background-color: #4162ff;
+          	border-radius: 2px;
+            text-align: center;
+            font-family: MicrosoftYaHei;
+          	font-size: 13px;
+          	font-weight: normal;
+          	font-stretch: normal;
+          	letter-spacing: 0px;
+          	color: #ffffff;
+            cursor: pointer;
+            &:hover,&:active{
+              background-color: #6781fd;
+            }
+          }
+        }
+    }
+    .container {
+        flex: 1;
+        padding: 16px;
+        max-height: 100%;
+        overflow: hidden;
+        .search-wrap {
+            margin-top: 24px;
+            .search-option {
+                width: 200px;
+            }
+            .search-content {
+                margin-left: 10px;
+                width: 338px;
+                height: 34px;
+                border: 1px solid #dddddd;
+                border-radius: 2px;
+                align-items: center;
+                .left {
+                    width: 137px;
+                }
+                .split {
+                    width: 1px;
+                    height: 22px;
+                    background-color: #e1e5ee;
+                }
+                .right {
+                    flex: 1;
+                }
+            }
+            .refresh-wrap {
+                width: 34px;
+                height: 34px;
+                line-height: 38px;
+                border-radius: 2px;
+                border: 1px solid #dddddd;
+                background-color: #f9f9f9;
+                text-align: center;
+                margin-left: 10px;
+            }
+        }
+        .content-wrap {
+            flex: 1;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+}

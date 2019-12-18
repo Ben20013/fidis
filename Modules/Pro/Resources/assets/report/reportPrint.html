@@ -1,0 +1,748 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <script src="js/echarts.min.js" charset="utf-8"></script>
+  <style media="screen">
+    html,body{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+      border-spacing: 0;
+    }
+    .flex-wrap {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -moz-flex;
+    }
+    .flex-column{
+    	display: -webkit-flex;
+    	display: flex;
+    	-webkit-flex-direction: column;
+    	flex-direction: column;
+    }
+    .title-wrap{
+      width:100%;
+      height:50px;
+      line-height:50px;
+      text-align:center;
+      background-color: #ffffff;
+    }
+    .title-wrap .title{
+      display:inline-block;
+      /* height:17px; */
+      font-family:MicrosoftYaHei;
+      font-size:18px;
+      font-weight:normal;
+      font-stretch:normal;
+      /* line-height:17px; */
+      letter-spacing:0px;
+      color:#111111
+    }
+    .botton-wrap{
+      position:fixed;
+      bottom:30px;
+      right:20px;
+      justify-content:flex-end
+    }
+    .botton-wrap .import-btn,.botton-wrap .close-btn{
+      width:68px;
+      height:32px;
+      line-height:32px;
+      background-color:#4162ff;
+      border-radius:2px;
+      margin-right:10px;
+      cursor:pointer;
+      text-align:center;
+    }
+    .botton-wrap .import-btn:hover,.botton-wrap .close-btn:hover{
+      opacity:0.8
+    }
+    .botton-wrap .import-btn span,.botton-wrap .close-btn span{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      font-weight:normal;
+      font-stretch:normal;
+      line-height:28px;
+      letter-spacing:0px;
+      color:#f7f7f7
+    }
+    .no-data{
+      width:100%;
+      height:100%;
+      justify-content:center;
+      align-items:center
+    }
+    .no-data span{
+      margin-top:24px;
+      font-size:14px;
+      color:#999999
+    }
+    .mix-report-item-block{
+      width: calc(100% - 40px);
+      padding: 0 20px 20px 20px;
+      margin: 0 auto;
+      margin-bottom: 16px;
+      background-color: #ffffff;
+    }
+    .mix-report-item-block .mix-report-item-title{
+      height: 50px;
+      line-height: 50px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #dddddd;
+      font-family: MicrosoftYaHei;
+    	font-size: 18px;
+    	font-weight: normal;
+    	font-stretch: normal;
+    	letter-spacing: 0px;
+    	color: #111111;
+    }
+    .mix-report-item-block .mix-report-item-content table.mix-report-table tr td{
+      height: 39px;
+      border: 1px solid #dddddd;
+      font-family: MicrosoftYaHei;
+      font-size: 13px;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 28px;
+      letter-spacing: 0px;
+      color: #333333;
+      text-align: center;
+      word-break: break-all;
+    }
+    .mix-report-item-block .mix-report-item-content.mix-report-chart{
+      min-height: 400px;
+    }
+    .hide{
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function(){
+      var iframe = window.parent.document.getElementById('reportDetailIframe');
+      var title = iframe.getAttribute('data-title');
+      var data = iframe.getAttribute('data-reference');
+      document.getElementById('mixReportTitle').innerHTML = title;
+      document.querySelector('title').innerHTML = title;
+      let lang = localStorage.getItem('MIXPRO_LOCALE_LANGUAGE') || 'zh';
+      // console.log(document.querySelector('div.no-data'));
+      if (typeof data == 'string'&&data!='') {
+        // console.log(JSON.parse(data));
+        dealReference(JSON.parse(data))
+      }else{
+        let msg = lang!='en'?'暂无相关数据':'Temporarily No Data Available';
+        let str = `<div class="no-data flex-column">
+          <img src="../images/public/no-data-icon.png" alt="">
+          <span>${msg}</span>
+        </div>`;
+        document.getElementById('mixReportContainer').innerHTML = str;
+      }
+      document.getElementById('downloadBtn').innerHTML = lang!='en' ? '下载' : 'Download'
+      document.getElementById('closeBtn').innerHTML = lang!='en' ? '关闭' : 'Close'
+    };
+    function importReport(){
+      document.querySelector('div.botton-wrap').style.display = 'none';
+      window.print();
+      window.location.reload();
+      document.querySelector('div.botton-wrap').style.display = 'block';
+    };
+    function download(){
+      if (window.parent.downloadReport&&typeof window.parent.downloadReport == 'function') {
+        window.parent.downloadReport();
+      }
+    };
+    function closeWin(){
+      if (window.parent.closeMixReportDetailWin&&typeof window.parent.closeMixReportDetailWin == 'function') {
+        window.parent.closeMixReportDetailWin();
+      }
+    };
+    function dealReference(data){
+    	if (data.length) {
+    		let tmp = [];
+    		for (var i = 0; i < data.length; i++) {
+    			if (data[i]['table']) {
+    				drawTable(data[i]['table']);
+    			}
+          if (data[i]['line_chart']){
+            let result = data[i]['line_chart'];
+            if (Array.isArray(result)) {
+              for (var j = 0; j < result.length; j++) {
+                drawLine(result[j]['title'],result[j]['legend'],result[j]['time'],result[j]['data'],result[j]['markpoint']);
+                // drawBar(result[j]['title'],result[j]['legend'],result[j]['time'],result[j]['data']);
+              }
+            } else {
+              drawLine(result['title'],result['legend'],result['time'],result['data'],result['markpoint']);
+            }
+    				// dealChartData(data[i]['line_chart']);
+    			}
+          if (data[i]['bar_chart']){
+            let result = data[i]['bar_chart'];
+            if (Array.isArray(result)) {
+              for (var j = 0; j < result.length; j++) {
+                drawBar(result[j]['title'],result[j]['legend'],result[j]['time'],result[j]['data']);
+              }
+            } else {
+              drawBar(result['title'],result['legend'],result['time'],result['data']);
+            }
+    				// dealChartData(data[i]['line_chart']);
+    			}
+    		}
+    	}
+    };
+    function drawTable(data){
+      // console.log(data);
+      let maxlen = 1;
+      for (var m = 0; m < data.length; m++) {
+        maxlen = Math.max(data[m].length,maxlen);
+      }
+      // console.log(maxlen);
+      let table_str = [];
+      table_str.push('<table class="mix-report-table">');
+      for (var i = 0; i < data.length; i++) {
+        table_str.push('<tr>');
+        for (var j = 0; j < data[i].length; j++) {
+          // let cs = j==data[i].length-1&&data[i].length!=data[data.length-1].length?(data[data.length-1].length-data[i].length+1):'1';
+          let cs = j==data[i].length-1&&data[i].length!=maxlen?(maxlen-data[i].length+1):'1';;
+          // console.log(maxlen);
+          table_str.push('<td colspan="'+cs+'">'+data[i][j]+'</td>');
+        }
+        table_str.push('</tr>');
+      }
+      table_str.push('</table>');
+      let blockDiv = document.createElement('div');
+      let titleDiv = blockDiv.cloneNode(true);
+      let contentDiv = blockDiv.cloneNode(true);
+      let id = 'table' + (Math.random()*new Date().getTime()).toFixed(0);
+      titleDiv.textContent = data[0][0];
+      titleDiv.setAttribute('class','mix-report-item-title');
+      contentDiv.setAttribute('id',id);
+      contentDiv.setAttribute('class','mix-report-item-content');
+      blockDiv.setAttribute('class','mix-report-item-block flex-column');
+      blockDiv.appendChild(titleDiv);
+      blockDiv.appendChild(contentDiv);
+			document.getElementById('mixReportContainer').appendChild(blockDiv);
+      document.getElementById(id).innerHTML=table_str.join('');
+    };
+    function dealChartData(data){
+      let legend = Object.assign([],data[0]);
+			legend.splice(0,1);
+			data.splice(0,1);
+			let xAxisData = [];
+			let obj = {};
+			for (var i = 0; i < data.length; i++) {
+				xAxisData.push(data[i].splice(0,1));
+				for (var j = 0; j < data[i].length; j++) {
+					if (!obj[j]) {
+						obj[j] = [];
+					}
+					obj[j].push(data[i][j]);
+				}
+			}
+			drawLine(legend,xAxisData,obj);
+    };
+    function drawLine(chartTitle,legendData,xAxisData,seriesData,markPointData){
+      /**
+       * line_chart:{
+       *   time:[10-10,10-11],
+       *   legend:['line1','line2'],
+       *   data:{
+       *     line1:[10,10],
+       *     line2:[10,11]
+       *   }
+       * }
+       * 返回格式
+       */
+      if (!Array.isArray(legendData)) {
+        legendData = [legendData];
+      }
+      let blockDiv = document.createElement('div');
+      let titleDiv = blockDiv.cloneNode(true);
+      let contentDiv = blockDiv.cloneNode(true);
+      let id = 'line' + (Math.random()*new Date().getTime()).toFixed(0);
+      titleDiv.textContent = chartTitle?chartTitle:legendData[0];
+      titleDiv.setAttribute('class','mix-report-item-title');
+      contentDiv.setAttribute('id',id);
+      contentDiv.setAttribute('class','mix-report-item-content mix-report-chart');
+      blockDiv.setAttribute('class','mix-report-item-block flex-column');
+      blockDiv.appendChild(titleDiv);
+      blockDiv.appendChild(contentDiv);
+			document.getElementById('mixReportContainer').appendChild(blockDiv);
+			let series = [];
+      let xAxis = [
+        {
+            type : 'category',
+            boundaryGap : false,
+            axisLine:{
+              show:true
+            },
+            axisTick:{
+              show:false
+            },
+            splitLine:{
+              lineStyle:{
+                color:'#eeeeee'
+              }
+            },
+            data : xAxisData
+        }
+      ];
+			let yAxis = [];
+      let legendIndex = 0;
+      let lineColor = ['#4162ff','#3bbc6a','#e24359','#fdcd61','#44b4ff','#474c53','#8b9efc'];
+			for (var key in seriesData) {
+				if (seriesData.hasOwnProperty(key)) {
+					let yaxisItem = {
+						show:  legendData.length==1?true:false,
+						type : 'value',
+						axisLine:{
+							show:legendData.length==1?true:false,
+						},
+						axisTick:{
+							show:legendData.length==1?true:false,
+						},
+						splitLine:{
+							lineStyle:{
+								color:'#f3f3f3',
+							}
+						}
+					};
+					yAxis.push(yaxisItem);
+					let obj = {
+							name:legendData[legendIndex],
+							type:key.indexOf('bar')!=-1?'bar':'line',
+							data:seriesData[key],
+							yAxisIndex:legendIndex,
+              markPoint: {
+                symbol:'react',
+                symbolSize:(value, params) => {
+                    return [(params.data.coord[0]?params.data.coord[0]+'':'').length*8 + params.name.length*12,24]
+                },
+                symbolOffset:[0, '-15'],
+                label:{
+                    show: true,
+                    color:'#333333',
+                    formatter:function(params){
+                      let str = params.name + ':' + (params.data.coord[0]?params.data.coord[0]:'');
+                      return str
+                    }
+                },
+                data: []
+              },
+              markLine: {
+                lineStyle: {
+                  normal: {
+                    color: 'red',
+                    type: 'solid',
+                    width: 1
+                  }
+                },
+                symbol: 'none',
+                data:[],
+                animation: false,
+                tooltip: {
+                  formatter: ''
+                }
+              },
+              areaStyle:{
+                color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: lineColor[legendIndex] // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#ffffff' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                }
+              },
+					  }
+					series.push(obj);
+          legendIndex++;
+				}
+			}
+      // console.log(series);
+      if (markPointData&&Array.isArray(markPointData)&&markPointData.length) {
+        let coordArr = [];
+        let dateTime = [];
+        let markValue = [];
+        for (var i = 0; i < markPointData.length; i++) {
+          dateTime.push(markPointData[i]['coord'][0]);
+          markValue.push(Number(markPointData[i]['coord'][1]));
+          coordArr.push([{
+            name: markPointData[i]['name'],
+            coord:[markPointData[i]['coord'][0],0],
+          }, {
+            coord:[markPointData[i]['coord'][0], markPointData[i]['coord'][1]]
+          }]);
+        }//end
+        let xAll = [...new Set(xAxisData.concat(dateTime))].sort(function(a,b){
+            return Date.parse(a) - Date.parse(b);
+        });
+        series.push(
+          {
+            type:'line',
+            data: xAll.map(function(item){
+              return Math.max.apply(null,markValue);
+            }),
+            animation: false,
+            lineStyle: {
+              width:0,
+              color: '#fff',
+              opacity:0,
+            },
+            markLine: {
+              lineStyle: {
+                normal: {
+                  color: 'red',
+                  type: 'solid',
+                  width: 1
+                }
+              },
+              symbol: 'none',
+              data:coordArr,
+              animation: false,
+              tooltip: {
+                formatter: ''
+              }
+            },
+            symbol: 'none',
+            tooltip: {
+              trigger: 'item',
+              backgroundColor: '#fff'
+            },
+            yAxisIndex:yAxis.length,
+            xAxisIndex:xAxis.length,
+          }
+        );
+        yAxis.push({
+          show: false,
+          type: 'value',
+          name: '',
+          min: 0,
+          max: Math.max.apply(null,markValue)+100,
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            formatter: '{value}'
+          },
+          axisPointer: {
+            triggerTooltip: false
+          }
+        });
+        xAxis.push({
+            show : false,
+            type : 'category',
+            boundaryGap : false,
+            axisLine:{
+              show:true
+            },
+            axisTick:{
+              show:false
+            },
+            splitLine:{
+              lineStyle:{
+                color:'#eeeeee'
+              }
+            },
+            data : xAll
+        });
+      }
+			// 基于准备好的dom，初始化echarts实例
+      let myChart = echarts.init(document.getElementById(id));
+			myChart.setOption({
+			    title : {show:false},
+          color:lineColor,
+					tooltip: {
+    				trigger: 'axis',
+    				axisPointer: {
+    					type: 'cross',
+    					label: {
+    						backgroundColor: '#6a7985'
+    					}
+    				},
+            textStyle:{
+              align:'left'
+            }
+    			},
+			    legend: {
+						top:15,
+            right:45,
+			      data:legendData
+			    },
+			    calculable : true,
+          grid:{
+            show:false,
+            left:45,
+            right:45,
+            bottom:45,
+          },
+			    xAxis : xAxis,
+			    yAxis : yAxis,
+			    series : series
+			 });
+		};
+    function drawBar(chartTitle,legendData,xAxisData,seriesData){
+      /**
+       * bar_chart:{
+       *   time:[10-10,10-11],
+       *   legend:['line1','line2'],
+       *   data:{
+       *     line1:[10,10],
+       *     line2:[10,11]
+       *   }
+       * }
+       * 返回格式
+       */
+      if (!Array.isArray(legendData)) {
+        legendData = [legendData];
+      }
+      let blockDiv = document.createElement('div');
+      let titleDiv = blockDiv.cloneNode(true);
+      let contentDiv = blockDiv.cloneNode(true);
+      let id = 'line' + (Math.random()*new Date().getTime()).toFixed(0);
+      titleDiv.textContent = chartTitle?chartTitle:legendData[0];
+      titleDiv.setAttribute('class','mix-report-item-title');
+      contentDiv.setAttribute('id',id);
+      contentDiv.setAttribute('class','mix-report-item-content mix-report-chart');
+      blockDiv.setAttribute('class','mix-report-item-block flex-column');
+      blockDiv.appendChild(titleDiv);
+      blockDiv.appendChild(contentDiv);
+			document.getElementById('mixReportContainer').appendChild(blockDiv);
+			let series = [];
+      let xAxis = [
+        {
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            },
+            data : xAxisData
+        }
+      ];
+			let yAxis = [];
+      let legendIndex = 0;
+			for (var key in seriesData) {
+				if (seriesData.hasOwnProperty(key)) {
+					let yaxisItem = {
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#333'
+                }
+            }
+					};
+					yAxis.push(yaxisItem);
+					let obj = {
+							name:legendData[legendIndex],
+							type:'bar',
+							data:seriesData[key],
+							yAxisIndex:legendIndex,
+              // barWidth: '50%',//柱形的宽度
+              itemStyle: {
+                normal: {
+                  barBorderRadius: 20,
+                  color: new echarts.graphic.LinearGradient(
+                      0, 0, 0, 1,
+                      [
+                          {offset: 0, color: '#44b4ff'},
+                          {offset: 1, color: '#4162ff'}
+                      ]
+                  )
+                }
+            },
+					  }
+					series.push(obj);
+          legendIndex++;
+				}
+			}
+			// 基于准备好的dom，初始化echarts实例
+      let myChart = echarts.init(document.getElementById(id));
+			myChart.setOption({
+			    title : {show:false},
+          // color:['#4162ff','#3bbc6a','#e24359','#fdcd61','#44b4ff','#474c53','#8b9efc'],
+          tooltip : {
+    				trigger: 'axis',
+    				axisPointer : {
+    					type : 'shadow'
+    				},
+            textStyle:{
+              align:'left'
+            }
+    			},
+			    legend: {
+						top:15,
+            right:45,
+			      data:legendData
+			    },
+          grid:{
+            show:false,
+            left:10,
+            right:45,
+            bottom:45,
+            containLabel:true
+          },
+			    xAxis : xAxis,
+			    yAxis : yAxis,
+			    series : series
+			 });
+		};
+  </script>
+</head>
+<body>
+  <div class="title-wrap">
+    <span class="title" id="mixReportTitle"></span>
+  </div>
+  <div class="content-wrap flex-column" id="mixReportContainer">
+
+  </div>
+  <div class="botton-wrap flex-wrap">
+    <div class="import-btn" onclick="download()"><span id="downloadBtn"></span></div>
+    <!-- <div class="import-btn" onclick="importReport()"><span>打印</span></div> -->
+    <div class="close-btn" onclick="closeWin()"><span id="closeBtn"></span></div>
+  </div>
+</body>
+<style media="print">
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+    page-break-after:always;
+  }
+  .flex-wrap {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -moz-flex;
+  }
+  .flex-column{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .title-wrap{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+  }
+  .title-wrap .title{
+    display:inline-block;
+    /* height:17px; */
+    font-family:MicrosoftYaHei;
+    font-size:18px;
+    font-weight:normal;
+    font-stretch:normal;
+    /* line-height:17px; */
+    letter-spacing:0px;
+    color:#111111
+  }
+  .content-wrap .block{
+    width:90%;
+    margin:0 auto;
+    margin-bottom:20px;
+  }
+  .content-wrap .block table.mix-report-table tr td{
+    height:39px;border:1px solid #dddddd;
+    font-family:MicrosoftYaHei;
+    font-size:13px;
+    font-weight:normal;
+    font-stretch:normal;
+    line-height:28px;
+    letter-spacing:0px;
+    color:#333333;
+    word-break: break-all;
+  }
+  .botton-wrap{
+    position:fixed;
+    bottom:30px;
+    right:20px;
+    justify-content:flex-end
+  }
+  .botton-wrap .import-btn,.botton-wrap .close-btn{
+    width:68px;
+    height:32px;
+    line-height:32px;
+    background-color:#4162ff;
+    border-radius:2px;
+    margin-right:10px;
+    cursor:pointer;
+    text-align:center;
+  }
+  .botton-wrap .import-btn:hover,.botton-wrap .close-btn:hover{
+    opacity:0.8
+  }
+  .botton-wrap .import-btn span,.botton-wrap .close-btn span{
+    font-family:MicrosoftYaHei;
+    font-size:14px;
+    font-weight:normal;
+    font-stretch:normal;
+    line-height:28px;
+    letter-spacing:0px;
+    color:#f7f7f7
+  }
+  .no-data{
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center
+  }
+  .no-data span{
+    margin-top:24px;
+    font-size:14px;
+    color:#999999
+  }
+  .mix-report-item-block{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    page-break-after:always;
+  }
+  .mix-report-item-block table.mix-report-table tr td{
+    height: 39px;
+    border: 1px solid #dddddd;
+    font-family: MicrosoftYaHei;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #333333;
+    text-align: center;
+    word-break: break-all;
+  }
+  .mix-report-item-block.mix-report-chart{
+    min-height: 400px;
+    width: 100%;
+  }
+  .hide{
+    display: none;
+  }
+</style>
+</html>

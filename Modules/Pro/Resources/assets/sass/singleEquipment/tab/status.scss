@@ -1,0 +1,62 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../../sass/common.scss";
+@import "../../../sass/icon.scss";
+@import "../../../sass/dialog.scss";
+
+//设备状态
+.deviceStatus{
+  height: 100%;
+  width: 100%;
+  .dashBoardContent{
+    flex: 1;
+    text-align: center;
+    // height:100%;
+    // padding-bottom: 16px;
+    width: 100%;
+    overflow-x:hidden;
+    overflow-y: auto;
+    // background-color:#ffffff;
+  }
+  .pageBtn{
+    height:60px;
+    width: 100%;
+    // background-color: #fff;
+    align-items:center;
+    @include flex-pack-center();
+    overflow: hidden;
+    .mixBtn{
+      height: 26px;
+      line-height: 26px;
+      padding: 3px 10px;
+      margin-left: 10px;
+      background-color: #ffffff;
+      border: solid 1px #e5e5e5;
+      border-radius: 2px;
+      text-align: center;
+      cursor: default;
+      ont-family: MicrosoftYaHei;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+    }
+    .active{
+      background-color: #3bbc6a;
+      color:#f7f7f7;
+    }
+  }
+}

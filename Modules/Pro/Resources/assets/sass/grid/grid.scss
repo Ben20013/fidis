@@ -1,0 +1,160 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../sass/common.scss";
+@import "../../sass/icon.scss";
+@import "../../sass/dialog.scss";
+.myPage{
+	margin: 10px auto;
+}
+.mg{
+    margin: 0 20px;;
+}
+.customerContNext3{
+    background-color: #ffffff;
+    border: solid 1px #e5e5e5;
+	.serchBox{
+	   height: 78px;
+	   min-height: 70px;
+		 .topic{
+			 width: 150px;
+			 margin-left: 8px;
+		 }
+	   .selectOne{
+	       height: 36px;
+	       font-family: MicrosoftYaHei;
+	        font-size: 14px;
+	        font-weight: normal;
+	        font-stretch: normal;
+	        width: 130px;
+	        letter-spacing: 0px;
+	        color: #333333;
+	        margin: 0 8px 0 30px;
+	        cursor: pointer;
+	   }
+	   .selectTwo{
+	       width: 97px;
+	       height: 36px;
+	       font-family: MicrosoftYaHei;
+	        font-size: 14px;
+	        font-weight: normal;
+	        font-stretch: normal;
+	        letter-spacing: 0px;
+	        color: #333333;
+	        cursor: pointer;
+	   }
+	   .search{
+	       width: 213px;
+
+
+	       margin-left: 8px;
+	   }
+	   .searchBtn{
+	        width: 75px;
+	        height: 36px;
+	        //margin-top: 5px;
+	        background-color: #3bbc6a;
+	        border-radius: 2px;
+	        font-family: MicrosoftYaHei;
+	        font-size: 12px;
+	        font-weight: normal;
+	        font-stretch: normal;
+	        line-height: 28px;
+	        letter-spacing: 0px;
+	        color: #f7f7f7;
+	        @include flex-pack-center();
+	        cursor: pointer;
+	        margin-left: 8px;
+
+	        &:active{
+	            opacity: 0.5;
+	        }
+	   }
+	   .ic_refresh{
+	       margin-left: 15px;
+	       height: 40px!important;
+	       width: 40px!important;
+	       margin-top: 5px;
+	   }
+	}
+	.equipmentList{
+		flex: 1;
+		overflow-x: hidden;
+		overflow-y: auto;
+		table{
+		 th{
+			 background-color: #ececec;
+			 height: 40px;
+			 line-height: 40px;
+			 font-family: MicrosoftYaHei;
+			 font-size: 13px;
+			 font-weight: normal;
+			 font-stretch: normal;
+			 letter-spacing: 0px;
+			 color: #333333;
+			 text-align: left;
+			 padding-left: 8px;
+			 &:not(:last-child){
+				 border-right: 1px solid #ffffff;
+			 }
+			 &:first-child{
+				 text-align: center;
+				 padding-left: 0;
+			 }
+		 }
+		 td{
+			 height: 50px;
+			 padding: 5px 0px 5px 8px;
+			 text-align: left;
+			 border-bottom: 1px solid #eeeeee;
+			 overflow: hidden;
+			 // white-space: nowrap;
+			 text-overflow: ellipsis;
+			 font-family: MicrosoftYaHei;
+			 font-size: 14px;
+			 font-weight: normal;
+			 font-stretch: normal;
+			 line-height: 24px;
+			 letter-spacing: 0px;
+			 color: #777777;
+			 &:first-child{
+				 text-align: center;
+				 padding-left: 0;
+			 }
+			 a.unsubscribe{
+				 color: #777777;
+				 cursor: pointer;
+			 }
+		 }
+		 tbody tr:hover{
+			 background-color: #fbfcfe;
+			 td{
+				 color: #4162ff;
+				 a.unsubscribe{
+					 color: #4162ff;
+					 cursor: pointer;
+				 }
+			 }
+		 }
+		}
+		.noFw{
+		 color: #666666;
+		 font-size: 30px;
+		 margin: 100px auto;
+		 font-weight:800;
+		}
+	}
+}

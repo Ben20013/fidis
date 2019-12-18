@@ -1,0 +1,138 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../sass/common.scss";
+@import "../../sass/icon.scss";
+@import "../../sass/dialog.scss";
+.main {
+    .content {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .deviceContentBox {
+            flex: 1;
+            // border: solid 1px transparent;
+            height: 100%;
+            // padding-left:8px;
+            overflow: hidden;
+            table {
+                table-layout: fixed;
+                border-collapse: collapse;
+                width: 100%;
+                // height: 100%;
+            }
+            .deviceTopMenu {
+                height: 83px;
+                background-color: #ffffff;
+                border-radius: 2px;
+                border: solid 1px #e5e5e5;
+                @include flex-pack-justify();
+                .deviceContTopL {
+                    height: 83px;
+                    line-height: 83px;
+                    font-family: MicrosoftYaHei;
+                    font-size: 16px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    letter-spacing: 0px;
+                    color: #666666;
+                    .choose {
+                        color: #111111;
+                    }
+                    .menuItem {
+                        position: relative;
+                        min-width: 40px;
+                        cursor: pointer;
+                        margin-left: 40px;
+                        text-align: center;
+                        @media (min-width: 1366px) and (max-width: 1500px) {
+                            margin-left: 20px;
+                        }
+                        &.active {
+                            color: #111111;
+                        }
+                        &:active {
+                            opacity: 0.5;
+                        }
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                        .buttomChoose {
+                            margin: 0 auto;
+                            margin-top: -4px;
+                            width: 34px;
+                            height: 4px;
+                            background-color: #5387ff;
+                        }
+                    }
+                }
+                .deviceContTopR {
+                    margin-right: 36px;
+                    .ic_return {
+                        width: 32px;
+                        height: 32px;
+                        background: url($path+'/modules/pro/static/image/customer/return.png') no-repeat center center;
+                        border: 1px solid #e5e5e5;
+                        border-radius: 2px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .deviceDashBoard {
+                flex: 1;
+                height: 100%;
+                padding-top: 8px;
+                // position:relative;
+                overflow: hidden;
+                .pageBtn {
+                    height: 60px;
+                    width: 100%;
+                    // background-color: #fff;
+                    align-items: center;
+                    @include flex-pack-center();
+                    overflow: hidden;
+                    .mixBtn {
+                        height: 26px;
+                        line-height: 26px;
+                        padding: 3px 10px;
+                        margin-left: 10px;
+                        background-color: #ffffff;
+                        border: solid 1px #e5e5e5;
+                        border-radius: 2px;
+                        text-align: center;
+                        cursor: default;
+                        font-family: MicrosoftYaHei;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                    }
+                    .active {
+                        background-color: #3bbc6a;
+                        color: #f7f7f7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//无数据
+.nodata {
+    // margin: 100px auto;
+    text-align: center;
+    color: #999999;
+    font-size: 16px;
+}

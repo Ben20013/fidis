@@ -1,0 +1,193 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../../sass/common.scss";
+@import "../../../sass/icon.scss";
+@import "../../../sass/dialog.scss";
+//设备事件，故障，报警
+.equipmentEFA {
+    width: 100%;
+    height: 100%;
+    .equipmentEFAContent {
+        flex: 1;
+        background-color: #ffffff;
+        .buttonTool {
+            height: 77px;
+            line-height: 77px;
+            padding-left: 30px;
+            .searchWrap {
+                display: inline-block;
+                font-family: MicrosoftYaHei;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #666666;
+                .block {
+                    display: inline-block;
+                    height: 36px;
+                    line-height: 36px;
+                    vertical-align: middle;
+                }
+                .searchBtn {
+                    padding: 9px 12px 9px 30px;
+                    background: url($path+'/modules/pro/static/image/icon/search_white.png') no-repeat 10px center;
+                    background-color: #3bbc6a;
+                    border-radius: 2px;
+                    font-size: 12px;
+                    color: #f7f7f7;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    &:active,
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .ic_refresh {
+                display: inline-block;
+                vertical-align: middle;
+                margin: -1px 0 0 15px;
+            }
+        }
+        .EFAList {
+            flex: 1;
+            overflow-y: auto;
+            table {
+                width: 100%;
+                tr {
+                    th {
+                        height: 49px;
+                        line-height: 49px;
+                        font-weight: normal;
+                        text-align: left;
+                        color: #999999;
+                        border-bottom: 1px solid #e5e5e5;
+                        padding: 0 8px;
+                        border-bottom: 1px solid #e5e5e5;
+                        @include overEllipsis();
+                        &:first-child {
+                            padding-left: 16px;
+                        }
+                    }
+                    td {
+                        height: 49px;
+                        padding: 0 8px;
+                        line-height: 20px;
+                        // @include overEllipsis();
+                        border-bottom: 1px solid #e5e5e5;
+                        &:first-child {
+                            padding-left: 16px;
+                        }
+                    }
+                    &.active {
+                        background-color: #f8fafd;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pageBtn {
+    height: 60px;
+    width: 100%;
+    // background-color: #fff;
+    align-items: center;
+    @include flex-pack-center();
+    overflow: hidden;
+    .mixBtn {
+        height: 26px;
+        line-height: 26px;
+        padding: 3px 10px;
+        margin-left: 10px;
+        background-color: #ffffff;
+        border: solid 1px #e5e5e5;
+        border-radius: 2px;
+        text-align: center;
+        cursor: default;
+        ont-family: MicrosoftYaHei;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+    }
+    .active {
+        background-color: #3bbc6a;
+        color: #f7f7f7;
+    }
+}
+
+// 设备事件，故障，报警-查看
+.viewequipmentEFA {
+    width: 800px;
+    .md-content {
+        background-color: #ffffff;
+        .contBox {
+            padding: 20px 30px;
+            .viewInfoWrap {
+                .rowWrap {
+                    .colWrap {
+                        width: 33%;
+                        .value {
+                            @include overEllipsis();
+                        }
+                    }
+                    .colAll {
+                        width: 100%;
+                        .fileList {
+                            height: 32px;
+                            line-height: 32px;
+                            margin-top: 5px;
+                            .download {
+                                padding: 9px 12px 9px 30px;
+                                background-color: #3bbc6a;
+                                border-radius: 2px;
+                                color: #f7f7f7;
+                            }
+                        }
+                    }
+                    .title {
+                        // height: 34px;
+                        font-family: MicrosoftYaHei;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        line-height: 24px;
+                        letter-spacing: 0px;
+                        color: #999999;
+                    }
+                    .value {
+                        height: 34px;
+                        font-family: HelveticaNeueLTStd-Roman;
+                        font-size: 14px;
+                        font-weight: normal;
+                        line-height: 24px;
+                        letter-spacing: 0px;
+                        color: #333333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//无数据
+.nodata {
+    // margin: 100px auto;
+    text-align: center;
+    color: #999999;
+    font-size: 16px;
+}

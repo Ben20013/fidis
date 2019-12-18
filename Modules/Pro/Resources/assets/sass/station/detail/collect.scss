@@ -1,0 +1,205 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../../sass/common.scss";
+@import "../../../sass/icon.scss";
+@import "../../../sass/dialog.scss";
+
+//设备事件，故障，报警
+.collect-content-wrap{
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  .content{
+    background-color: #ffffff;
+    padding: 0 20px;
+    .collect-btn-wrap{
+      margin-top: 24px;
+      .collect-btn{
+        float: right;
+        // width: 92px;
+        padding: 0 10px;
+      	height: 32px;
+        line-height: 32px;
+      	background-color: #4162ff;
+      	border-radius: 2px;
+        text-align: center;
+        font-family: MicrosoftYaHei;
+      	font-size: 13px;
+      	font-weight: normal;
+      	font-stretch: normal;
+      	letter-spacing: 0px;
+      	color: #ffffff;
+        cursor: pointer;
+        &:hover,&:active{
+          background-color: #6781fd;
+        }
+      }
+    }
+    .collect-list{
+      flex:1;
+      overflow-y: auto;
+      margin-top: 24px;
+      .list-body{
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      table{
+        width:100%;
+        tr{
+          th{
+            height: 40px;
+            line-height: 40px;
+            background-color: #ececec;
+            text-align: left;
+            padding: 0 8px;
+            font-family: MicrosoftYaHei;
+          	font-size: 13px;
+          	font-weight: normal;
+          	font-stretch: normal;
+          	letter-spacing: 0px;
+          	color: #333333;
+            border-right: 1px solid #ffffff;
+            @include overEllipsis();
+          }
+          td{
+            height: 49px;
+            padding: 0 8px;
+            line-height: 20px;
+            @include overEllipsis();
+            border-bottom: 1px solid #eeeeee;
+          }
+          &.active{
+            background-color:#f8fafd;
+          }
+        }
+        tbody tr:hover{
+          background-color: #fbfcfe;
+          td{
+            color: #4162ff;
+            a{
+              color: #4162ff;
+              &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.page-btn{
+  height:60px;
+  width: 100%;
+  align-items:center;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+// 设备事件，故障，报警-查看
+.view-collect{
+  width: 800px;
+  .md-content{
+    background-color: #ffffff;
+    .contBox{
+        padding: 20px 30px;
+        .view-info-wrap{
+          .row-wrap{
+            .col-wrap{
+              width: 33%;
+              .value{
+                @include overEllipsis();
+              }
+            }
+            .colAll{
+              width: 100%;
+              .fileList{
+                height:32px;
+                line-height: 32px;
+                margin-top:5px;
+                .download{
+                  padding: 9px 12px 9px 30px;
+                  background-color: #3bbc6a;
+                  border-radius: 2px;
+                  color: #f7f7f7;
+                }
+              }
+            }
+            .title {
+              // height: 34px;
+              font-family: MicrosoftYaHei;
+              font-size: 12px;
+              font-weight: normal;
+              font-stretch: normal;
+              line-height: 24px;
+              letter-spacing: 0px;
+              color: #999999;
+            }
+            .value {
+              height: 34px;
+              font-family: HelveticaNeueLTStd-Roman;
+              font-size: 14px;
+              font-weight: normal;
+              line-height: 18px;
+              letter-spacing: 0px;
+              color: #333333;
+              overflow: auto;
+            }
+          }
+        }
+    }
+  }
+}
+//数据收集
+.collect-data{
+  width: 800px;
+  .md-content{
+    background-color: #ffffff;
+    .contBox{
+        padding: 20px 30px;
+        .collect-item-table table{
+          table-layout: fixed;
+          border-collapse: collapse;
+          width: 100%;
+          td{
+            padding: 10px 0;
+          }
+          .desc-title{
+            font-family: MicrosoftYaHei;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 28px;
+            letter-spacing: 0px;
+            color: #666666;
+          }
+          .block{
+            max-width: 220px;
+          }
+        }
+    }
+  }
+}
+//无数据
+.nodata{
+  // margin: 100px auto;
+  text-align: center;
+  color:#999999;
+  font-size: 16px;
+}

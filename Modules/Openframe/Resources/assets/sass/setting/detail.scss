@@ -1,0 +1,224 @@
+@import "../common.scss";
+@import "../icon.scss";
+@import "../dialog.scss";
+.cont-view {
+    flex: 1;
+    overflow: hidden;
+}
+
+.cont-box {
+    flex: 1;
+    padding: 0px;
+    overflow: hidden;
+    .container {
+        max-height: 100%;
+        padding: 0 20px;
+        background-color: #ffffff;
+        .title-wrap {
+            height: 65px;
+            line-height: 65px;
+            border-bottom: 1px solid #dddddd;
+            .title {
+                display: inline-block;
+                width: 72px;
+                height: 17px;
+                font-family: MicrosoftYaHei;
+                font-size: 18px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 0px;
+                letter-spacing: 0px;
+                color: #111111;
+            }
+        }
+        .content-wrap {
+            flex: 1;
+            margin-top: 24px;
+            overflow: hidden;
+            .config {
+                .title {
+                    height: 18px;
+                    line-height: 18px;
+                    font-family: MicrosoftYaHei;
+                    font-size: 16px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    letter-spacing: 0px;
+                    color: #4162ff;
+                }
+                .config-content {
+                    margin-top: 20px;
+                    .row {
+                        align-items: center;
+                        &:not(:first-child) {
+                            margin-top: 16px;
+                        }
+                        &.tip,
+                        &.upload {
+                            margin: 0;
+                        }
+                        .name {
+                            width: 140px;
+                            font-family: MicrosoftYaHei;
+                            font-size: 14px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            letter-spacing: 0px;
+                            color: #666666;
+                            text-align: right;
+                        }
+                        .value {
+                            margin-left: 20px;
+                            width: 600px;
+                            .image-wrap {
+                                width: 180px;
+                                height: 50px;
+                                border-radius: 2px;
+                                border: solid 1px #e5e5e5;
+                                overflow: hidden;
+                                background-color: #eeeeee;
+                                &.icon {
+                                    width: 50px;
+                                    line-height: 50px;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    img {
+                                        width: 16px;
+                                        height: 16px;
+                                        margin: 0 auto;
+                                        margin-top: 17px;
+                                    }
+                                }
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            .upload-btn {
+                                position: relative;
+                                width: 92px;
+                                height: 36px;
+                                line-height: 36px;
+                                text-align: center;
+                                background-color: #4162ff;
+                                cursor: default;
+                                &:active,
+                                &:hover {
+                                    background-color: #6781fd;
+                                }
+                                span {
+                                    width: 49px;
+                                    height: 12px;
+                                    font-family: MicrosoftYaHei;
+                                    font-size: 12px;
+                                    font-weight: normal;
+                                    font-stretch: normal;
+                                    line-height: 28px;
+                                    letter-spacing: 0px;
+                                    color: #ffffff;
+                                }
+                                input[type="file"] {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    cursor: pointer;
+                                    font-size: 0;
+                                    overflow: hidden;
+                                    right: 0;
+                                    top: 0;
+                                    opacity: 0;
+                                }
+                            }
+                            &.tip-txt {
+                                height: 28px;
+                                font-family: MicrosoftYaHei;
+                                font-size: 12px;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                line-height: 28px;
+                                letter-spacing: 0px;
+                                color: #666666;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .buttom-wrap {
+            margin: 24px 0;
+            padding-left: 160px;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid rgb(221, 221, 221);
+            .save-btn,
+            .reset-btn {
+                text-align: center;
+                span {
+                    width: 33px;
+                    height: 14px;
+                    font-family: MicrosoftYaHei;
+                    font-size: 16px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                }
+            }
+            .save-btn {
+                width: 220px;
+                height: 40px;
+                line-height: 40px;
+                background-color: #4162ff;
+                span {
+                    color: #ffffff;
+                }
+                cursor: default;
+                &:active,
+                &:hover {
+                    background-color: #6781fd;
+                }
+            }
+            .reset-btn {
+                width: 218px;
+                height: 38px;
+                line-height: 38px;
+                background-color: #f9f9f9;
+                border: solid 1px #dddddd;
+                margin-left: 10px;
+                span {
+                    color: #666666;
+                }
+                cursor: default;
+                &:active,
+                &:hover {
+                    background-color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+.el-tag {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.el-tag+.el-tag {
+    margin-left: 0;
+}
+
+.button-new-tag {
+    margin-left: 0;
+    height: 32px;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+}
+
+.input-new-tag {
+    width: 90px;
+    margin-left: 0;
+    vertical-align: bottom;
+    margin-top: 5px;
+}

@@ -1,0 +1,205 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@charset 'utf8';
+@import "../mixin.scss";
+
+@include b(bright) {
+  .content{
+    width: 100%;
+    height: px2rem(674px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    &__banner{
+      position: relative;
+      width: px2rem(813px);
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: url('/modules/portal/static/images/login-banner-bright.png') no-repeat center center;
+      background-size: 100% 100%;
+    }
+    &__login{
+      width: px2rem(387px);
+      height: 100%;
+      background-color: #fbfcfe;
+      overflow: hidden;
+    }
+  }
+  .logo-box{
+    position: absolute;
+    top: px2rem(42px);
+    left: px2rem(55px);
+    .logo{
+      height: px2rem(55px);
+    }
+  }
+  .text-box{
+    .title{
+      height: px2rem(40px);
+      font-family: PingFang-SC-Heavy;
+      font-size: px2rem(40.4px);
+      font-weight: bold;
+      font-stretch: normal;
+      letter-spacing: px2rem(0px);
+      color: #fbfcfe;
+    }
+    .summary{
+      height: px2rem(14px);
+      margin-top: px2rem(27px);
+      font-family: MicrosoftYaHei;
+      font-size: px2rem(14px);
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: px2rem(0px);
+      color: #fbfcfe;
+    }
+  }
+  .login-title{
+    margin-top: px2rem(66px);
+    margin-left: px2rem(35px);
+    .title{
+      margin-left: px2rem(2px);
+      font-family: PingFang-SC-Heavy;
+      font-size: px2rem(28px);
+      font-weight: bold;
+      font-stretch: normal;
+      letter-spacing: px2rem(0px);
+      color: #22262c;
+    }
+    .icon{
+      width: px2rem(39px);
+      height: px2rem(9px);
+      margin-top: px2rem(42px);
+      background-color: #3192ff;
+      border-radius: px2rem(4.5px);
+    }
+  }
+  .login-content{
+    margin-top: px2rem(85px);
+    margin-left: px2rem(40px);
+    .input-item{
+      &:last-child{
+        margin-top: px2rem(43px);
+      }
+    }
+    .name{
+      font-family: PingFang-SC-Medium;
+      font-size: px2rem(14px);
+      font-weight: bold;
+      font-stretch: normal;
+      letter-spacing: px2rem(0px);
+      color: #22262c;
+    }
+    .input{
+      width: px2rem(305px);
+      height: px2rem(33px);
+      margin-top: px2rem(10px);
+      border-bottom: px2rem(1px) solid #abafb5;
+      input{
+        width: 100%;
+        height: px2rem(32px);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: PingFang-SC-Medium;
+        font-size: px2rem(12px);
+        font-weight: bold;
+        font-stretch: normal;
+        letter-spacing: px2rem(0px);
+      }
+      input[type="text"] {
+        background: transparent !important;
+      }
+      input[type="password"] {
+        background: transparent !important;
+      }
+      @keyframes autofill {
+        to {
+          color: #000000;
+          background: transparent;
+        }
+      }
+      @-webkit-keyframes autofill {
+        to {
+          color: #000000;
+          background: transparent;
+        }
+      }
+      input:-webkit-autofill {
+        animation-name: autofill !important;
+        animation-fill-mode: both !important;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        background-clip: content-box !important;
+      }
+      input::-webkit-input-placeholder{
+        color:#abafb5;
+      }
+      input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color:#abafb5;
+      }
+      input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color:#abafb5;
+      }
+      input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+        color:#abafb5;
+      }
+    }
+  }
+  .login-button{
+    margin-top: px2rem(64px);
+    padding-right: px2rem(41px);
+    justify-content: flex-end;
+    .login-btn{
+      width: px2rem(101px);
+      height: px2rem(43px);
+      line-height: px2rem(45px);
+      text-align: center;
+      background-color: #5384fe;
+      border-radius: px2rem(21.5px);
+      border: solid px2rem(1px) #5384fe;
+      font-family: PingFang-SC-Medium;
+      font-size: px2rem(14px);
+      font-weight: bold;
+      font-stretch: normal;
+      letter-spacing: px2rem(0px);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+  .footer{
+    position: absolute;
+    left: 0;
+    bottom: px2rem(35px);
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .copy-right{
+    height: px2rem(16px);
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: px2rem(14px);
+    font-weight: normal;
+    letter-spacing: px2rem(0px);
+    color: #959eb4;
+  }
+}

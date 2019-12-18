@@ -1,0 +1,803 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+
+/* echarts 表格样式 start */
+
+table.echartTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    /* height: 100%; */
+}
+
+table.echartTable tr td div.boxContainer {
+    position: relative;
+    /* width: calc(100% - 6px);
+  height:calc(100% - 4px); */
+    background-color: #ffffff;
+    border: solid 1px #e5e5e5;
+    overflow: hidden;
+}
+
+table.echartTable tr td div.boxContainer.custom {
+    background-color: transparent;
+    border: none;
+}
+
+@-moz-document url-prefix() {
+    table.echartTable tr td div.boxContainer {
+        position: relative;
+        /* width: calc(100% - 6px);
+    height:calc(100% - 6px); */
+        background-color: #ffffff;
+        border: solid 1px #e5e5e5;
+        overflow: hidden;
+    }
+    table.echartTable tr td div.boxContainer.custom {
+        background-color: transparent;
+        border: none;
+    }
+}
+
+table.echartTable td {
+    /* padding:4px; */
+    /* border:1px solid #111111; */
+    text-align: center;
+    vertical-align: top;
+    word-break: keep-all;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* echarts 表格样式 end */
+
+
+/* echarts 图表外部样式 start */
+
+table.echartTable div.boxContainer .echartsTitle {
+    height: 39px;
+    line-height: 39px;
+    font-size: 16px;
+    padding-left: 20px;
+    font-family: MicrosoftYaHei;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #111111;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.echartTable div.boxContainer .echartsTitle .name {
+    flex: 1;
+}
+
+table.echartTable div.boxContainer .echartsBody {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+table.echartTable div.boxContainer .echartsBdMapTitle {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table.echartTable div.boxContainer .echartsTitle .echartsBdmapFullscreenIcon {
+    /* float: right; */
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url('/modules/pro/static/image/icon/fullscreen_normal.png') no-repeat center center;
+    cursor: pointer;
+}
+
+table.echartTable div.boxContainer .echartsTitle .echartsBdmapFullscreenIcon:active,
+table.echartTable div.boxContainer .echartsTitle .echartsBdmapFullscreenIcon:hover {
+    background: url('/modules/pro/static/image/icon/fullscreen_press.png') no-repeat center center;
+}
+
+@media (max-width: 1500px) {
+    table.echartTable div.boxContainer .echartsTitle {
+        height: 29px;
+        line-height: 29px;
+        font-size: 15px;
+        padding-left: 20px;
+    }
+    table.echartTable div.boxContainer .echartsBody {
+        top: 30px;
+    }
+    table.echartTable div.boxContainer .echartsTitle .echartsBdmapFullscreenIcon {
+        margin-right: 5px;
+    }
+}
+
+
+/* echarts 图表外部样式 end */
+
+
+/* 新增项的样式 start */
+
+table.echartTable .groupImg {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* background:#eee; */
+}
+
+table.echartTable .groupImg .imgPos {
+    position: absolute;
+    height: 94%;
+    width: 90%;
+    top: 6%;
+    left: 10%;
+}
+
+table.echartTable .groupImg .imgPos .imgBody {
+    position: relative;
+    height: 100%;
+    width: 90%;
+    background-size: 100% 100%;
+}
+
+table.echartTable .groupImg .imgPos .imgBody>div {
+    position: absolute;
+}
+
+table.echartTable .groupImg .imgPos .imgBody .textItemY {
+    /* width: 100px; */
+    height: 50px;
+}
+
+table.echartTable .groupImg .imgPos .imgBody .name {
+    background-color: #006EAF;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 25px;
+    padding: 0px 3px;
+    border-bottom: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+table.echartTable .groupImg .imgPos .imgBody .value {
+    background-color: #FFF;
+    color: #006EAF;
+    font-size: 12px;
+    line-height: 24px;
+    border: 1px solid #006EAF;
+    border-radius: 0px 0px 3px 3px;
+    padding: 0px 3px;
+    border-top: none;
+}
+
+table.echartTable .groupImg .statusPos {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 80px;
+    /* background-color:#fff; */
+    text-align: center;
+    /* display: none; */
+}
+
+table.echartTable .groupImg .statusPos .mix-status {
+    margin: 15px 0;
+    color: #666666;
+}
+
+table.echartTable .groupImg .statusPos .mix-status>span {
+    border-radius: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(229, 229, 229);
+    border-image: initial;
+    padding: 3px 10px;
+}
+
+table.echartTable .groupImg .statusPos .mix-status span {
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: rgb(51, 51, 51);
+}
+
+table.echartTable .groupImg .statusPos .mix-status span span {
+    display: inline-block;
+    width: 37px;
+}
+
+table.echartTable .groupImg .statusPos .mix-status div {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    display: inline-block;
+    border-radius: 100%;
+}
+
+table.echartTable .liquid-level-map {
+    position: absolute;
+    width: 41px;
+    height: 146px;
+}
+
+table.echartTable .liquid-level-map__bar {
+    position: relative;
+    width: 14px;
+    height: calc(100% - 2px);
+    border: 1px solid #5384fe;
+    float: left;
+    box-shadow: inset 0px 0px 2px 1px #7997c7;
+    overflow: hidden;
+}
+
+table.echartTable .liquid-level-map__value {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #49e337;
+}
+
+table.echartTable .liquid-level-map__scale {
+    width: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+table.echartTable .split {
+    display: block;
+    width: 10px;
+    height: 1px;
+    background-color: #5384fe;
+}
+
+table.echartTable span.num {
+    display: inline-block;
+    margin: -8px 0 0 12px;
+    vertical-align: text-top;
+    font-size: 12px;
+    color: #2b3a52;
+    font-weight: bold;
+}
+
+table.echartTable .scale_value {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+table.echartTable .scale_value.max {
+    height: 1px;
+    justify-content: flex-start;
+}
+
+table.echartTable .groupImg .status-map {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 37px;
+    height: 18px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAASCAYAAADc4RcWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjRGQ0MzOUI5RUJDQzExRTk5RjYzOTZCQjlGMDkyOUNGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjRGQ0MzOUJBRUJDQzExRTk5RjYzOTZCQjlGMDkyOUNGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NEZDQzM5QjdFQkNDMTFFOTlGNjM5NkJCOUYwOTI5Q0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NEZDQzM5QjhFQkNDMTFFOTlGNjM5NkJCOUYwOTI5Q0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6tf4SUAAAEYUlEQVR42rxWW28bRRT+Zu31dWOvL4nruHFJBS0VUgtCiKoCUZXyRnlAVDz1gb6h/gH+Az8AXrgKxEUVIPFGFFqUBpVCpUaBJn3gktKYJk7W96zXa2c5Z7zrrN1ERajqSJ9mZ/bsN9+cOefMikLhEHZppwivu32REMKDax3CbcL3hC8Js6MGYkTU44R3CCfx8NplwpuEZW8i6Hv5AuFbwhgPtrd7aDYraLdb6HY7feNgCJGIBk3ToSiB+672HznYAdcIZwg/+D3FHrpKSPLANJuo1dYxPl5AJjOJWFQjSwFzq47yZgnl9RJ0fQJRnt+jMUeLOM6Hijgb3Y8nggnAAX7r1fGFeQcfWrcRH+aoEY6zx1iUoIcf3QlJ1mwaOHLkGcTiSYhdFmy26lheuka7Te8qjDnCNQMXs8/hmKpDkjjeW34QWLSreHVjHlYy5edgx5xgUafpYcZz9/r6Co4eex46Geu6jmgkArPdhlGpYbvXI0qHKAVarRoWFuYwMXFg6CiZo7K2gkuTp3E0noXIkPNjYaBlwtlsAMThtcVOFSdXZ5DKDXG8FEgkMm/Rw9M8ajQqyGYnkc9P07GlMT19AFNTBURjMXQ6NomzEKCPFUVBOBSDbVv0jYFwODZYiDnOa0Wcyx6Csi8F5XARynQeYoxsuj0IqwMRDEjkwnFs9iz8bG74OSzFTXvZ2u0m9uUfQSCgIq6NIZ1Oo1gsUJ+CFh+j+RAUescIBFVpy0Hsb8xxdpziNBKG0BMQORL2aAEK97rWn2dEuQ+R7WOjHKc4+6a8EWeInsxJT9h2D/V6C6V/yrT7LVi2TZmj+uICMti9rPJzPJXJQxHkDT7qVhvO3U1gy4JwtqGQGF+A4clwHt1bQxxTLMryF0deWAQCFMwmVktlGEadAteiGGpLDzKhoEx0HI/43lSQnuAYadNiawblVZOin5axbPLQcB3u9ux7OFhUiXDYqyFNCuBUKkdrO6jVuTS03H0F6MgUGeSD+KEs3fEeBnXoRqeCZ1OF/gRthoNcilVJqBrc8TZt7qaxMcpxJ+gWLimKi1qp9DvVp/2+DHbcjQjfWEjO0uof9E18SBRzfH53GccnD7qVwMFOTej3OxVC4DOyHeGY50D/1BtxlV3566bMID4qCdr54HkwDtJxVqWtpqWGRDHHe3/ewKJJcRRR+0dJPceSwj0FNwg8/6tp4H2yHeH4hEV95xYtWSuSyXHMX/kGjbpBAoJSQF/QTt+sV3Bl7mtpO3rd8DiWyOLM7MdYaG1IQZxlCKtSjCeI3708+5G09XGwjhmuU9JlhHPsfVXtB+LS0lV0LBPhSKzvXvJ3tbqGW8s/4fovM3J3e10zzGHSMb+7cBkbnS3ocQ3peAI2ndt1YxVvL1zChbmvIOL66DXzCqHs/0u4z4UsZECyQBb0/y7kPTkau13I/l+XD7x78CE1PrI39vp1gfviBN8/hNcIL7rFVX2AIrh8/02YI1x0713Hb/CvAAMAz0iwutA9ApkAAAAASUVORK5CYII=') no-repeat center center;
+}
+
+table.echartTable .groupImg .status-map.on {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAASCAYAAADc4RcWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUxMkI0MUQ0RUJDQzExRTk4ODRCRTkzQTkxQzQ4QzI4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUxMkI0MUQ1RUJDQzExRTk4ODRCRTkzQTkxQzQ4QzI4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTEyQjQxRDJFQkNDMTFFOTg4NEJFOTNBOTFDNDhDMjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTEyQjQxRDNFQkNDMTFFOTg4NEJFOTNBOTFDNDhDMjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5l23kwAAAEhUlEQVR42rxWbWubVRi+npckT16a9/QlWdNWUNdJxSFDmaKyOfyk4hCEgQw/Cv4A0V8g/gDFD9sH3ZfhhKH4ZSiTrjLHdGwWU5mWrl1TzJq0SZ40TZomXvfJy56ElomMnfZq7nOec67n6v12oqVST2CPcYx4p/OZJtx4eKNOLBM/EueJHwY3aAOiDhKfEa/g0Y3LxPvEQnfBdDx8mfiWGJJJs7kL297A9nYFjUa9vdl0w7ICCATC0HXjgW/7jxzigGvE68RPTk+Jh64SIZlUqzaKdg6R0xOIvJWCdTCoCLcXSti4cBeFL5cRDgzD6w3sK0hxFHNIJFKIx8a4lxxaC1tcz69nkcutIhzu4ygSz4vHRJRG4+fOgiIruzfw+LkX4ZuJcqXFH26R35bYwNb8Jv46NYuhemRPYcJh2wVMTx+B3x9yPJHTmrIqlRIymWv0WNTJIY45agSDsVdpfNR1d6G0humLJxCeGcOIGUPCiMOre9FAk3wGTM2ENRJA6KUkVs7cgs8KQtP0vpAVClnMPP0CQuE4hhNxxOIxWB6LIWwoUZquw+PxIhyJY/lOBj5fj+MAcUVEfUjjWVkplzcQOz2F5KlDGDFimDLTmDSS8BkUpTVRa+3C0FwwdRe8w0Oob1RRvp7jC3w9UcIRjycxNjbFsEUxOZVGejxJb3hRq+3Qi3Xmkq5g8dzOTo1nCk6Omt4p+3bObNtInXwKHs2PoB7CsBHFhJlCQo8jqIXg0X0Kbs0LN72XOnlIJbFzCMfo6CQM0wV/YAixaBTp9AFEKVDmJtdNwwWjA9k7wHFMqm+8O5MKiR+eUFXRZKhsBu0f5l+FraXJNQ/FoKX18iP+zFSvqpwc4ciI8kRjZxelcgXZtXsolSpqbpjuXp4KUzgyPMgxLqJqzubo0XwkNFHlsVyrjGJzm2FrqLlH97dztf0Hjd16L3GdQ8peZ46U7C2sruaQzxfpjTrsSlV5p3uExYhG2+o/T2SJJ7tkld+ZE0cm6BCNHmoS1EzbbFlMch6WCmwXI8qZdRWOQUG2vYkIvaXqvFghttoKWiwUU79fzfK8nB/kuGt2GpcSJU1t5fxNJJ+b7mkXcaoV6G0HSZF0C1v2Wpa/T5RwrGX/ZrKn1D/T7QQa+iLfc5XsHeCYk1ed686ky94+Mwd7fp2JzIQ2mNiapWyV5Ia3bTPE5fk8bp+d45lInyjhWFr6AxW7yFCZ7YSmJ3TT5Zibak08emcpM8jxlbSERRqvSY+QXmGwD/15YRYTxw8jOJpQc2kD92GicGsV37/5CXxaEG631X+ZCgdfvLh4k5X1GHvQEAwmvabagKEKwOBnsbiOK7PfKEEODmmeH4so5TLiXfG+y+VGq7qLG59/h9q6DX8kDF+UXXlHQ/7GEn799CIuf/CFErTfNSMcMjKZq6jXq/BYvl6INjdzyCz8gt+uX1KCBq6ZN4h7zm8JD7iQNZWQQi5k/+9C3pejvNeF7PzqcrZ7Dz6iISF7b7+vLug8OEqcIN4mjneaq+shipD2vULMEl8Tlxz1qMa/AgwAQOCmjxe/z3UAAAAASUVORK5CYII=') no-repeat center center;
+}
+
+table.echartTable .groupImg .status-map.off {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAASCAYAAADc4RcWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjRGQ0MzOUI5RUJDQzExRTk5RjYzOTZCQjlGMDkyOUNGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjRGQ0MzOUJBRUJDQzExRTk5RjYzOTZCQjlGMDkyOUNGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NEZDQzM5QjdFQkNDMTFFOTlGNjM5NkJCOUYwOTI5Q0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NEZDQzM5QjhFQkNDMTFFOTlGNjM5NkJCOUYwOTI5Q0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6tf4SUAAAEYUlEQVR42rxWW28bRRT+Zu31dWOvL4nruHFJBS0VUgtCiKoCUZXyRnlAVDz1gb6h/gH+Az8AXrgKxEUVIPFGFFqUBpVCpUaBJn3gktKYJk7W96zXa2c5Z7zrrN1ERajqSJ9mZ/bsN9+cOefMikLhEHZppwivu32REMKDax3CbcL3hC8Js6MGYkTU44R3CCfx8NplwpuEZW8i6Hv5AuFbwhgPtrd7aDYraLdb6HY7feNgCJGIBk3ToSiB+672HznYAdcIZwg/+D3FHrpKSPLANJuo1dYxPl5AJjOJWFQjSwFzq47yZgnl9RJ0fQJRnt+jMUeLOM6Hijgb3Y8nggnAAX7r1fGFeQcfWrcRH+aoEY6zx1iUoIcf3QlJ1mwaOHLkGcTiSYhdFmy26lheuka7Te8qjDnCNQMXs8/hmKpDkjjeW34QWLSreHVjHlYy5edgx5xgUafpYcZz9/r6Co4eex46Geu6jmgkArPdhlGpYbvXI0qHKAVarRoWFuYwMXFg6CiZo7K2gkuTp3E0noXIkPNjYaBlwtlsAMThtcVOFSdXZ5DKDXG8FEgkMm/Rw9M8ajQqyGYnkc9P07GlMT19AFNTBURjMXQ6NomzEKCPFUVBOBSDbVv0jYFwODZYiDnOa0Wcyx6Csi8F5XARynQeYoxsuj0IqwMRDEjkwnFs9iz8bG74OSzFTXvZ2u0m9uUfQSCgIq6NIZ1Oo1gsUJ+CFh+j+RAUescIBFVpy0Hsb8xxdpziNBKG0BMQORL2aAEK97rWn2dEuQ+R7WOjHKc4+6a8EWeInsxJT9h2D/V6C6V/yrT7LVi2TZmj+uICMti9rPJzPJXJQxHkDT7qVhvO3U1gy4JwtqGQGF+A4clwHt1bQxxTLMryF0deWAQCFMwmVktlGEadAteiGGpLDzKhoEx0HI/43lSQnuAYadNiawblVZOin5axbPLQcB3u9ux7OFhUiXDYqyFNCuBUKkdrO6jVuTS03H0F6MgUGeSD+KEs3fEeBnXoRqeCZ1OF/gRthoNcilVJqBrc8TZt7qaxMcpxJ+gWLimKi1qp9DvVp/2+DHbcjQjfWEjO0uof9E18SBRzfH53GccnD7qVwMFOTej3OxVC4DOyHeGY50D/1BtxlV3566bMID4qCdr54HkwDtJxVqWtpqWGRDHHe3/ewKJJcRRR+0dJPceSwj0FNwg8/6tp4H2yHeH4hEV95xYtWSuSyXHMX/kGjbpBAoJSQF/QTt+sV3Bl7mtpO3rd8DiWyOLM7MdYaG1IQZxlCKtSjCeI3708+5G09XGwjhmuU9JlhHPsfVXtB+LS0lV0LBPhSKzvXvJ3tbqGW8s/4fovM3J3e10zzGHSMb+7cBkbnS3ocQ3peAI2ndt1YxVvL1zChbmvIOL66DXzCqHs/0u4z4UsZECyQBb0/y7kPTkau13I/l+XD7x78CE1PrI39vp1gfviBN8/hNcIL7rFVX2AIrh8/02YI1x0713Hb/CvAAMAz0iwutA9ApkAAAAASUVORK5CYII=') no-repeat center center;
+}
+
+table.echartTable .groupImg .status-light {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 18px;
+    height: 18px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkREQTU1Mzc0RkM0NDExRTk5MjBCODYzNkZBMjk4RDk5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkREQTU1Mzc1RkM0NDExRTk5MjBCODYzNkZBMjk4RDk5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RERBNTUzNzJGQzQ0MTFFOTkyMEI4NjM2RkEyOThEOTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RERBNTUzNzNGQzQ0MTFFOTkyMEI4NjM2RkEyOThEOTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5HGwsyAAACtklEQVR42nxUS08TURg9c2f6YCi0nba8CigsfCW6MSYGFxofS12ZuHLh0n9g/CMu3ejGmGjiTqLRAIYQ3VpckIhCSSqUtjNDaQvU892Z4oQgtzmZ+/rOPff7zq1RLJ7BMe0m8SD8ToZzv4iPxCviw9EA4wjROeIZcQMnt0/EY2K5N2FFFq8T74iBg4N9eN42dnd97O21g41WHMlkCqlUBkqZctAScZf4HFUkShaJdLPpoV6voFAoIpcfg92Xkm3Y2Wlga2sDlco6Mpkh9Ol51ImrokyIDHa+yISQeF4V5y9cQb+dPpTa5c+Aofu+30CptERlTo9MBMyYg4O52+w8letUq2VcvHQN6XQe+byDfCGHZCKBdmdfExlKIRFPIpsdwupqCbY9CMNQ44yfF6In7Fx23W0Gj2F0dAr5nIPp6VOYGC+iL2mj3e6gudthbhSUYTFXNjqdFly3ikTCFlUtFZaYifUwMjIFy4xR9gAcx8Hk5AQcksrYsiwipr/KtLj3tC5Gzy5StQnpSXUy2WGeauiruO4OyhsVNBo+T9+HqWKSc2YraBler1dR4RCiFhGXkckTRb7rNrG+VsHmZg2tVhsNjk2WX9LdNQKqgz1DVzPqozJxVnziezUmcliv1+oeuvWgVkwor6QigV1UmVO5atjWVGgsbbZyeUWrkjwFXwum9M148NV5svR4Y32FMf09ogUheik9cezqz+/weJIKg+VETagR13OK8P2a3ptKZXtEL4TovZiKtqd/CliYfwu3UWWQdahCqqTCsazNz73ReyUmNOSs+EhLIx7GYnQbW6m0SO80kaBfkolAfq1WwY/lRXz7OquVRJ7IPeJP9PWf8GgNfT3JiZCEStzjHm30b+R5+BBPanKdR//7G0G4MEPcIe4Tt0LDiqzfxBzxWnKCf97U7a8AAwByvubZiZBfIgAAAABJRU5ErkJggg==') no-repeat center center;
+}
+
+table.echartTable .groupImg .status-light.on {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRDNzMzNkZFRkM0NDExRTk5MTk0OTAwNERDODcyNDY0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRDNzMzNkZGRkM0NDExRTk5MTk0OTAwNERDODcyNDY0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REM3MzM2RkNGQzQ0MTFFOTkxOTQ5MDA0REM4NzI0NjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REM3MzM2RkRGQzQ0MTFFOTkxOTQ5MDA0REM4NzI0NjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5nVjAlAAAC0UlEQVR42oxUS2sTURT+7sxkZjJJ06Rpu3DoS0RrS6ngpoig+KAbH1gEoSDFpeAP0D/gxh+guLALH2BRUOqiIEqlVER8UKpSqAtti9DnkE7STNIk13MmM6HWWrzhy5y5M+e73/nuuSNsez92GCcIl4JrazA3R3hNGCG82p4gthF1Em4TjmP3MU64SpjZiegYYZRQV6mUkc068LwcSqWi/1DTdJhmHPF4Eoqi8pRLOEt4s5WIlbwj1OfzWWSyS0gNtSF1wYbZmaBpCW/GhfN0AWv355CMNyMajXNehtDHyphIUPCWJ5jE1R3se3QUsZ4UpdMjKavSOaaR++Lg++AE6oqpkIwFHGGiUxS85HKW1ubQNdaPRE8T0koCUWFgQxbgVNZRpp8MPNggsq/9Y2huaA3LPK0mEunrFBx2XQfpoQ7Yg91oUtPYq7agTduDmGJhU0gUZAmqiEBTIog216Ho5OF+WIJhWExUUIItJmOzsAe6oFNivUj4ZG2ajUYljSSpM5QYDDUKQ1j+O/ZAt78ZYbto9NfCEe9O+lA7FKGhTHJz2MSiXKdrEaTFJ4Ekn4T0HWvsba/tKHMwUYGg851JqwpVhScrWKTdzVQK8Igwr0gYiPkZssqDcqVYDYLBpf0K+yQ3vUZkFlQliixZuyo8UlQmX0wqzfJhqpb/Tn4mQzmRkGeBFb0nHOBmmx+Zgt130F9V8GJcihLsleRbbgLpx/OPp6hBYyHRJCt6yBF37Oy9SbjTK/7KOqnSyRedzWWw0aSMjXa/rWB2eJJyUiHRg78ashj1cOb5DTT1dqAmhb0Q1XB56gdGz9+EkTf/aEjuI18a4XIkopsyX8bnOy9QWMnBStXDakhClIDVTz/x8dYzjF+7ixi1x5Yjco6w/J+HVvjGsidczm6HdutnZDg4iLsNLufKvz4jtTk+O4SLhJNBw7KsecIE4QmfzcC82vgtwACbY/XZJndDPgAAAABJRU5ErkJggg==') no-repeat center center;
+}
+
+table.echartTable .groupImg .status-light.off {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRCMzE5NzQ3RkM0NDExRTk5OTUwOTVDRTk5NEU4MzNGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRCMzE5NzQ4RkM0NDExRTk5OTUwOTVDRTk5NEU4MzNGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REIzMTk3NDVGQzQ0MTFFOTk5NTA5NUNFOTk0RTgzM0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REIzMTk3NDZGQzQ0MTFFOTk5NTA5NUNFOTk0RTgzM0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz54IoH7AAACuElEQVR42nxUS08TURT+7rTzaDuFDkURGiBqpMaFj7ghbCSKO3GjxBUL2Rn/gP/BH6AbH/ERHyFu3ElADMEYTQwNCcGVEZGgtJTSls60U8Zz5oETQG7yZc6cOfe755z7nRGZTB/2WRcJN/xnj+9bIkwRXhMmd28Qu4hOEu4RBnHwmibcIiwGjmjo4wXCW0Jye7uJSqUI06zCtuteYFSBpunQ9RQkKcIHfSYMEz6EM+JMPhFaa7UKqqU/GFN7MaJlcCqS5DAsNDfxylzGY3MJidRhxGI67ysR+jkzJhJkfGQHk6ilIsbbB3BGNvbUIygyV9/AtfwsrFYjIOMEBphoiIwJLqf4+wfedw3hdCIN0dYKJDSgasJZ3wTs5g7hPJEN/pqA0dHLZbLrcqSlJX2HjPPlchFjeg9G01lInWlI2W5IxzohknGIhg3HakBEIxByBB1qHIWmhS+1PFSyaVmSf8XU2ApGDvVBxBSIlA7piAHpeAZShwFhJCHFZIg4QZMBTaXYE+5lBHLhW+tmi2/nXJoyEHQqHCrJgrNacEvjJiKm/usV4azaCftbPXB1M5FFUNwAOklwzTVyMclGmVKlYNOiTFWEmWy74VN6i0tbCXQyVy+6G4RC/Fs1oFDyMpKjnj+ApmChUaI9csCzHPWFlWWxvVxdRH/X0dBJzl5NO97XFxSraYnAO8sZPWeLFfvg+xzmtwpuQ/lUt/Fcrg+J3+Mq5s11PKRYXd/R2jMmeseiYj3EW9oxPPUUuWreI1MVj1Dzb4vec5U1XJl84sb6GmJBTrCO3NQIo7KsaDXHwf3cNPL1LRgJHW3xJBqSg6/rK7hL/tszbyASqfCIXCWshaf/gKEVbmO5J1yOn0l5v6EN/0Ye+YN40OJybv7vNwL/wwDPDuE64ZIvWE7rJ2GGMM492X2lfwUYADZU4BNPA/IKAAAAAElFTkSuQmCC') no-repeat center center;
+}
+
+@media (max-width: 1500px) {
+    table.echartTable .groupImg .imgPos .imgBody .name {
+        line-height: 20px;
+    }
+    table.echartTable .groupImg .imgPos .imgBody .value {
+        line-height: 19px;
+    }
+    table.echartTable .groupImg .statusPos {
+        width: 140px
+    }
+    table.echartTable .groupImg .statusPos .mix-status>span {
+        padding: 3px 5px;
+    }
+}
+
+
+/* 组态图 end */
+
+table.echartTable div.boxContainer .echartsBody .textdataitem {
+    float: left;
+    padding: 5px 10px;
+    text-align: left;
+    min-width: 60px;
+    min-height: 30px;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #999999;
+}
+
+table.echartTable div.boxContainer .echartsBody .textdataitem .value {
+    font-family: HelveticaNeueLTStd-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+}
+
+
+/* 卡片 */
+
+table.echartTable div.boxContainer .cardWrap {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    text-align: left;
+    overflow: hidden;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCard,
+table.echartTable div.boxContainer .cardWrap .itemCardX {
+    flex: 1;
+    padding-left: 20px;
+    height: 100%;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCard .name {
+    height: 28px;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #666666;
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCard .value {
+    height: 30px;
+    font-family: Microsoft YaHei;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #5387ff;
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCard .splitLine {
+    border-bottom: 1px solid #ebebeb;
+    width: 90%;
+    margin-left: -10%;
+    margin-top: 8px;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCardX .name,
+table.echartTable div.boxContainer .cardWrap .itemCardX .value {
+    /* flex: 1; */
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: #666666;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCardX .name {
+    padding-right: 3px;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCardX .value {
+    flex: 1;
+    font-family: Microsoft YaHei;
+    padding-left: 3px;
+}
+
+table.echartTable div.boxContainer .cardWrap .itemCardX .value span {
+    color: #5387ff;
+}
+
+@media (max-width: 1500px) {
+    table.echartTable div.boxContainer .cardWrap .itemCard,
+    table.echartTable div.boxContainer .cardWrap .itemCardX {
+        padding-left: 10px;
+    }
+    table.echartTable div.boxContainer .cardWrap .itemCard .name {
+        font-size: 12px;
+    }
+    table.echartTable div.boxContainer .cardWrap .itemCard .value {
+        font-size: 20px;
+    }
+}
+
+
+/* 卡片组 */
+
+table.echartTable div.boxContainer .cardGroupWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+table.echartTable div.boxContainer .cardGroupWrap .itemCard {
+    float: left;
+    width: 91px;
+    height: 75px;
+    padding: 0 20px;
+    border: 1px solid #e5e5e5;
+    background-color: #ffffff;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: left;
+}
+
+table.echartTable div.boxContainer .cardGroupWrap .itemCard .name {
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #666666;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.echartTable div.boxContainer .cardGroupWrap .itemCard .value {
+    font-family: Microsoft YaHei;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #5387ff;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* >=1400的设备 */
+
+@media (min-width: 1400px) {
+    table.echartTable div.boxContainer .cardGroupWrap .itemCard {
+        width: 110px;
+        height: 75px;
+        padding: 0 20px;
+    }
+}
+
+
+/* >=1600的设备 */
+
+@media (min-width: 1600px) {
+    table.echartTable div.boxContainer .cardGroupWrap .itemCard {
+        width: 130px;
+        height: 80px;
+        padding: 0 20px;
+    }
+}
+
+
+/* >=1800的设备 */
+
+@media (min-width: 1800px) {
+    table.echartTable div.boxContainer .cardGroupWrap .itemCard {
+        width: 183px;
+        height: 109px;
+        padding: 0 20px;
+    }
+}
+
+
+/* <=1399的设备 */
+
+@media (max-width: 1399px) {
+    table.echartTable div.boxContainer .cardGroupWrap .itemCard {
+        width: 91px;
+        height: 60px;
+        padding: 0 20px;
+    }
+}
+
+table.echartTable div.boxContainer .echartsBody .mapWrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+table.echartTable div.boxContainer .echartsBody .mapWrap .mapContainer {
+    width: 95%;
+    height: 90%;
+    overflow: hidden;
+}
+
+table.echartTable div.boxContainer .echartsBody .grid {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+table.echartTable div.boxContainer .echartsBody .grid table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.echartTable div.boxContainer .echartsBody .grid table th {
+    height: 30px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 8px;
+    text-align: left;
+    color: #666666;
+}
+
+table.echartTable div.boxContainer .echartsBody .grid table td {
+    height: 33px;
+    line-height: 33px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 8px;
+    text-align: left;
+    color: #333333;
+}
+
+table.echartTable div.boxContainer .echartsTitle .crewCardStatus {
+    width: 12px;
+    height: 12px;
+    float: right;
+    margin-top: 14px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+@media (max-width: 1500px) {
+    table.echartTable div.boxContainer .echartsTitle .crewCardStatus {
+        margin-top: 9px;
+    }
+}
+
+table.echartTable div.boxContainer .echartsBody .crewCard {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+table.echartTable div.boxContainer .echartsBody .crewCard .crewCardItem {
+    /* width: 100%; */
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    text-align: left;
+    font-family: MicrosoftYaHei;
+    font-size: 13px;
+}
+
+table.echartTable div.boxContainer .echartsBody .crewCard .crewCardItem:nth-child(2n) {
+    background-color: #eeeeee;
+}
+
+table.echartTable div.boxContainer .echartsBody .crewCard .crewCardItem .name {
+    padding-left: 10px;
+    width: 60%;
+}
+
+table.echartTable div.boxContainer .echartsBody .crewCard .crewCardItem .value {
+    width: 40%;
+}
+
+table.echartTable div.boxContainer .echartsBody video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+/* 新增项的样式 end */
+
+
+/* echarts textdata css start */
+
+div.echartsTextContiner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden;
+  overflow-y: auto; */
+}
+
+div.echartsTextContiner .boxContainer {
+    position: relative;
+    width: calc(100% - 2px);
+    /* height:calc(100% - 2px); */
+    background-color: #ffffff;
+    border: solid 1px #e5e5e5;
+}
+
+div.echartsTextContiner .boxContainer:not(:first-child) {
+    margin-top: 8px;
+}
+
+div.echartsTextContiner .boxContainer .echartsTitle {
+    height: 39px;
+    line-height: 39px;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #111111;
+    border-bottom: 1px solid #e5e5e5;
+    padding-left: 30px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.echartsTextContiner .boxContainer .echartsBody {
+    /* width: 100%; */
+    /* max-height: 240px; */
+    padding: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+div.echartsTextContiner .boxContainer .echartsBody .textdataitem {
+    /* float: left; */
+    padding: 5px 10px;
+    text-align: left;
+    min-width: 14.28%;
+    min-height: 50px;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #999999;
+}
+
+div.echartsTextContiner .boxContainer .echartsBody .textdataitem .value {
+    font-family: HelveticaNeueLTStd-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+}
+
+
+/* echarts textdata css end */
+
+
+/* 地图信息窗口 css */
+
+.bdmap-equipment {
+    width: 310px;
+    height: 115px;
+    background-color: #ffffff;
+    box-shadow: 2px 0px 8px 0px rgba(83, 135, 255, 0.41);
+}
+
+.bdmap-equipment .bdmap-base-info {
+    display: inline-block;
+    line-height: 16px;
+}
+
+.bdmap-equipment .bdmap-base-info div {
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.bdmap-equipment div a {
+    display: inline-block;
+    width: 117px;
+    height: 82px;
+    background-color: #edeef2;
+}
+
+.bdmap-equipment div a img {
+    width: 100%;
+}
+
+.bdmap-equipment .bdmap-base-info {
+    width: 90%;
+    margin-left: 10px;
+}
+
+
+/* 无数据 */
+
+.echarts_nodata {
+    margin: 100px auto;
+    text-align: center;
+    color: #999999;
+    font-size: 16px;
+}

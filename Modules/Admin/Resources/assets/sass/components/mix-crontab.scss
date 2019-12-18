@@ -1,0 +1,49 @@
+.schedule-comp {
+    .cron-result {
+        margin: 0 0 10px 0;
+        .result-item {
+            float: left;
+            margin-right: 20px;
+            .title {
+                float: left;
+                margin-right: 5px;
+            }
+            .content {
+                float: left;
+                width: 75px;
+            }
+        }
+        &:after {
+            display: block;
+            content: "";
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+    }
+    .cron {
+        width: 100%;
+        min-width: 300px;
+        margin-bottom: 0;
+        .card-box {
+            .item {
+                margin-bottom: 10px;
+                .el-input {
+                    width: 100px;
+                }
+                .el-checkbox-group {
+                    .el-checkbox {
+                        margin: 0;
+                        margin-right: 20px;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 50px;
+                    }
+                }
+                .many {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

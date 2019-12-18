@@ -1,0 +1,84 @@
+.left__selectBox {
+    width: 50%;
+    margin-right: 10px;
+}
+
+.search__selectBox {
+    width: 100%;
+}
+
+.content-wrap .mix-icon-button {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.content-wrap .block-body-table tr td:nth-child(2n+1) {
+    width: 115px;
+}
+
+//新增规则弹窗
+.addModal__input .el-select {
+    width: 35%;
+}
+
+.addModal__schedule_input .el-input {
+    width: 35%;
+    margin-right: 10px;
+}
+
+.addModal__schedule_input .el-select {
+    width: 20%;
+}
+
+//新增应用弹窗
+.addModal__timeType {
+    margin-bottom: -10px;
+}
+
+.addModal__timeType .el-tag {
+    color: #333;
+    background: none;
+    border-color: #ccc;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.el-tag+.el-tag {
+    margin-left: 0 !important;
+}
+
+.button-new-tag {
+    height: 32px;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.addModal__timeType .el-button {
+    padding: 0 10px;
+    height: 32px;
+    font-weight: 600;
+    margin-left: -4px;
+}
+
+.el-checkbox.is-bordered {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.el-checkbox.is-bordered+.el-checkbox.is-bordered {
+    margin-left: 0 !important;
+}
+
+//维保详情
+.details__box {
+    margin-bottom: 0px;
+}
+
+.details__box .table-wrap {
+    padding: 20px !important;
+}
+
+.flex-between {
+    justify-content: space-between !important;
+}

@@ -1,0 +1,194 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../../sass/common.scss";
+@import "../../../sass/icon.scss";
+@import "../../../sass/dialog.scss";
+
+//设备事件，故障，报警
+.collect-content-wrap{
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  .content{
+    width: 100%;
+    height: 100%;
+    .control-block-wrap{
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .control-block{
+        padding-bottom: 30px;
+        background-color: #ffffff;
+        margin-top: 16px;
+        &:first-child{
+          margin-top: 0;
+        }
+        .title{
+          height: 50px;
+          line-height: 50px;
+          border-bottom: 1px solid #dddddd;
+          font-family: Arial-BoldMT;
+        	font-size: 18px;
+        	font-weight: normal;
+        	font-stretch: normal;
+        	letter-spacing: 0px;
+        	color: #111111;
+          padding-left: 20px;
+        }
+        .row{
+          width: 100%;
+          padding-left: 20px;
+          align-items:center;
+          margin-top:20px;
+          &:last-child{
+            margin-bottom: 20px;
+          }
+          .name{
+            width: 110px;
+            font-family: MicrosoftYaHei;
+          	font-size: 16px;
+          	font-weight: normal;
+          	font-stretch: normal;
+          	letter-spacing: 0px;
+          	color: #111111;
+          }
+          .button-group{
+            flex: 1;
+            flex-wrap: wrap;
+            .item{
+              height: 30px;
+              line-height: 30px;
+              &:not(:first-child){
+                margin-left: 10px;
+              }
+              .button,.confirm{
+                display: inline-block;
+                padding: 0px 20px;
+                height: 32px;
+                line-height: 32px;
+              	background-color: #242d3d;
+              	border-radius: 2px;
+                font-family: MicrosoftYaHei;
+              	font-size: 13px;
+              	font-weight: normal;
+              	font-stretch: normal;
+              	letter-spacing: 0px;
+              	color: #ffffff;
+                cursor:pointer;
+                &:hover,&:active{
+                  opacity: 0.8;
+                }
+              }
+              .confirm{
+                margin-left: 10px;
+              }
+              .controlVal{
+                height: 30px;
+                border: 1px solid #eeeeee;
+                border-radius: 2px;
+                padding-left: 5px;
+                &:focus{
+                  border-color: #4162ff;
+                  outline: none;
+                }
+              }
+            }
+          }
+      }
+      }
+    }
+  }
+}
+
+// 设备控制-输入控制密码
+.control-passwd-win{
+  width: 500px;
+  .md-content{
+    background-color: #ffffff;
+    .contBox{
+      padding: 20px 30px;
+      .input-control-passwd{
+        height: 50px;
+        line-height: 50px;
+        input{
+          height: 24px;
+          border:1px solid #e5e5e5;
+          border-radius: 2px;
+          font-family: MicrosoftYaHei;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0px;
+          color: #333333;
+        }
+      }
+    }
+  }
+}
+//修改密码
+.modify-pwd-win{
+  width: 350px;
+  .md-content{
+    background: #fff;
+    position: relative;
+    .contentBox{
+      padding:0 30px 20px 30px;
+      .info-row{
+        height:60px;
+        line-height: 60px;
+        font-family: MicrosoftYaHei;
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        margin-top:20px;
+        &.oldpasswd{
+          margin-top:30px;
+        }
+        .name{
+          line-height: 28px;
+          color: #666666;
+        }
+        .value{
+          height:36px;
+          line-height: 36px;
+          font-size: 14px!important;
+        }
+      }
+    }
+    .btn_cancel{
+      width: 150px!important;
+    }
+    .btn_determine{
+      width: 150px!important;
+    }
+  }
+}
+//无数据
+.no-data{
+  width: 100%;
+  height: 100%;
+  @include flex-pack-center();
+  align-items: center;
+  span{
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #999999;
+  }
+}

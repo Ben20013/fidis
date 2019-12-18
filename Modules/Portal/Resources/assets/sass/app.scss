@@ -1,0 +1,42 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+// @import 'variables';
+// Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+// reset dom default css
+@import '../css/reset.css';
+// reset element ui css
+@import '../css/elementreset.css';
+@import '@/assets/sass/common.scss';
+@import '@/assets/theme/app.scss';
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+
+.hide {
+    display: none;
+}

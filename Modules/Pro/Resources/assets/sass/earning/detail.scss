@@ -1,0 +1,232 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../common.scss";
+@import "../icon.scss";
+@import "../dialog.scss";
+
+.cont-box{
+  flex: 1;
+  padding: 16px;
+  overflow: hidden;
+  .detail-container{
+    height: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .base-info{
+      background-color: #ffffff;
+      .info-title-wrap{
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #dddddd;
+        .info-title{
+          padding-left: 20px;
+          font-family: MicrosoftYaHei;
+          font-size: 16px;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0px;
+          color: #111111;
+        }
+        .info-btn-wrap{
+          flex: 1;
+          height: 100%;
+          padding-right: 20px;
+          justify-content: flex-end;
+          align-items: center;
+          .create-service-btn{
+            height: 32px;
+            line-height: 32px;
+          	background-color: #4162ff;
+          	border-radius: 2px;
+            padding: 0 10px;
+            font-family: MicrosoftYaHei;
+          	font-size: 13px;
+          	font-weight: normal;
+          	font-stretch: normal;
+          	letter-spacing: 0px;
+          	color: #f7f7f7;
+            cursor: pointer;
+            &:hover,&:active{
+              background-color: #6781fd;
+            }
+            i{
+              vertical-align: -3px;
+            }
+            span{
+              display: inline-block;
+            }
+          }
+          .edit-btn,.refresh-btn{
+            width: 32px;
+          	height: 32px;
+            line-height: 32px;
+            text-align: center;
+          	background-color: #ffffff;
+          	border-radius: 2px;
+          	border: solid 1px #dddddd;
+            margin-left: 10px;
+            i{vertical-align: -3px;}
+          }
+        }
+      }
+      .info-content{
+        height: 216px;
+        padding: 0 20px 24px 20px;
+        flex-wrap: wrap;
+        .item{
+          width: 20%;
+          font-family: MicrosoftYaHei;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 24px;
+          letter-spacing: 0px;
+          margin-top:24px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &.desc{
+            width: 100%;
+          }
+          .name{
+            color: #999999;
+          }
+          .value{
+            color: #333333;
+            &.num{
+              font-family: Arial-BoldMT;
+            }
+          }
+        }
+      }
+    }
+    .record-list{
+      margin-top: 16px;
+      background-color: #ffffff;
+      .record-title-wrap{
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #dddddd;
+        .record-title{
+          padding-left: 20px;
+          font-family: MicrosoftYaHei;
+          font-size: 16px;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0px;
+          color: #111111;
+        }
+      }
+      .list-wrap{
+        padding: 0 20px;
+        margin-top: 16px;
+        table{
+          th{
+            background-color: #ececec;
+            height: 40px;
+            line-height: 40px;
+            font-family: MicrosoftYaHei;
+          	font-size: 13px;
+          	font-weight: normal;
+          	font-stretch: normal;
+          	letter-spacing: 0px;
+          	color: #333333;
+            text-align: left;
+            padding-left: 8px;
+            &:not(:last-child){
+              border-right: 1px solid #ffffff;
+            }
+          }
+          td{
+            height: 48px;
+            padding-left: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eeeeee;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            a:hover{
+              color:#4162ff;
+              text-decoration: underline;
+              cursor:pointer;
+            }
+          }
+          tbody tr:nth-child(2n){
+            background-color: #f9f9f9;
+          }
+        }
+      }
+      .page-btn-wrap{
+        height: 70px;
+        min-height: 70px;
+        padding: 0 20px;
+        .block{
+          flex: 1;
+          align-items: center;
+          -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+//创建服务
+.createService{
+  width: 800px;
+  height: auto;
+  .md-content{
+    background: #fff;
+    .contBox{
+      padding:20px 30px;
+      .serviceItemTable table{
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: 100%;
+        td{
+          padding: 10px 0;
+        }
+        .descTitle{
+          font-family: MicrosoftYaHei;
+          font-size: 12px;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 28px;
+          letter-spacing: 0px;
+          color: #666666;
+        }
+        .serverFileBtn{
+          max-width: 80px;
+          max-height: 80px;
+          overflow: hidden;
+        }
+        .block{
+          max-width: 220px;
+        }
+      }
+    }
+  }
+}
+//无数据
+.nodata{
+  // margin: 100px auto;
+  text-align: center;
+  color:#999999;
+  font-size: 16px;
+}

@@ -1,0 +1,127 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../../sass/common.scss";
+@import "../../../sass/icon.scss";
+@import "../../../sass/dialog.scss";
+
+// 设备信息
+.deviceInfo{
+  height: 100%;
+  overflow:hidden;
+  overflow-y: auto;
+  .title{
+      height:54px;
+      line-height: 54px;
+      padding-left:30px;
+      @media (min-width: 1366px) and (max-width: 1500px){
+        padding-left:20px;
+      }
+      font-family: MicrosoftYaHei;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      color:#111111;
+      border-bottom: 1px solid #e5e5e5;
+    }
+  .deviceBaseInfo{
+    // width: 100%;
+    background-color:#ffffff;
+    border: 1px solid #e5e5e5;
+    .contentInfo{
+      padding: 15px 30px 0 30px;
+      table{
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: 100%;
+        td{
+          // text-align: center;
+          vertical-align: top;
+          padding-bottom: 15px;
+          padding-right: 5px;
+          .subtext,.name{
+            font-family: MicrosoftYaHei;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 24px;
+            letter-spacing: 0px;
+            color: #999999;
+            width: 100%;
+            @include overEllipsis();
+          }
+          .name{
+            color:#333333;
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 16px;
+          }
+          img{
+            width: 100%;
+            min-height: 120px;
+            max-width: 151px;
+            max-height: 142px;
+            position: relative;
+            top: 5px;
+            border:1px solid #e5e5e5;
+            background-color:#f2f2f2;
+          }
+          .center{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .energyInfo{
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    position: relative;
+    margin-top:8px;
+    .contentInfo{
+      flex-wrap: wrap;
+      .item {
+        min-width: 40px;
+        height: 48px;
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #999999;
+        padding: 15px 95px 15px 15px;
+        // text-align: center;
+        white-space: nowrap;
+        .name {
+          font-family: HelveticaNeueLTStd-Roman;
+          font-size: 14px;
+          font-weight: normal;
+          letter-spacing: 0px;
+          color: #333333;
+        }
+      }
+    }
+  }
+  .pageBtn{
+    position:absolute;
+    bottom: 0px;
+    height:60px;
+    width: 100%;
+    background-color: #fff;
+  }
+}

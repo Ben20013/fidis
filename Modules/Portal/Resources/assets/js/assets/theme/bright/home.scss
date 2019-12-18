@@ -1,0 +1,686 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+@charset 'utf8';
+@import "../mixin.scss";
+@include b (bright) {
+    .body {
+        flex: 1;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        .content {
+            width: 100%;
+            height: 698px;
+            overflow: hidden;
+        }
+    }
+    .content__header {
+        width: 100%;
+        height: 70px;
+        margin-bottom: 148px;
+        overflow: hidden;
+    }
+    .content__app {
+        position: relative;
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+    }
+    .header-content,
+    .app__content {
+        width: 1400px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .header__top-content {
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+    }
+    .header__top-content_left {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        .title {
+            font-family: MicrosoftYaHei-Bold;
+            font-size: 28px;
+            font-weight: bold;
+            font-stretch: normal;
+            line-height: 30px;
+            letter-spacing: 0px;
+            color: #000000;
+        }
+    }
+    .header__top-content_right {
+        width: 278px;
+        height: 100%;
+        overflow: hidden;
+    }
+    .header__top-content_date {
+        flex: 1;
+        height: 100%;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .date__top-content {
+        font-family: ArialMT;
+        font-size: 12px;
+        font-weight: 600;
+        font-stretch: normal;
+        letter-spacing: 0.2px;
+        color: #adb9d3;
+    }
+    .date__bottom-content {
+        height: 15px;
+        font-family: ArialMT;
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        letter-spacing: 0.5px;
+        color: #596186;
+    }
+    .header__top-content_user {
+        width: 136px;
+        height: 100%;
+        align-items: center;
+        overflow: hidden;
+    }
+    .user__left-content {
+        position: absolute;
+        z-index: 1;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        background-color: #94b4fd;
+        box-shadow: 0px 2px 20px 0px rgba(171, 213, 255, 0.4);
+        border: solid 2px #ffffff;
+        border-radius: 50%;
+        .chart {
+            font-family: Arial-BoldMT;
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: normal;
+            letter-spacing: 0.4px;
+            color: #5480e6;
+        }
+    }
+    .user__right-content {
+        flex: 1;
+        height: 100%;
+        margin-left: 45px;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        .user-name {
+            flex: 1;
+            height: 100%;
+            justify-content: space-between;
+            .name {
+                font-family: ArialMT;
+                font-size: 16px;
+                font-weight: bold;
+                font-stretch: normal;
+                letter-spacing: 0.6px;
+                color: #adb9d3;
+            }
+            .address {
+                height: 14px;
+                font-family: ArialMT;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0.2px;
+                color: #596186;
+            }
+        }
+        .arrow-down {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: url('/modules/portal/static/images/public/arrow-drop-down.png') no-repeat center center;
+        }
+    }
+    .header__bottom-content {
+        width: 100%;
+        height: 20px;
+        margin-top: 17px;
+        font-family: MicrosoftYaHei;
+        font-size: 19.6px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #9ea6ae;
+        overflow: hidden;
+    }
+    .app__content {
+        position: relative;
+        flex-wrap: wrap!important;
+        .app__item {
+            position: relative;
+            width: 330px;
+            height: 225px;
+            margin: 25px 0 0 25px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            opacity: 0.9;
+            overflow: hidden;
+            cursor: pointer;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                transition: .2s;
+                background: #c1d0ef;
+                transform-origin: left;
+                transform: scaleX(0);
+                z-index: -1;
+            }
+            &:hover::after {
+                transform: scaleX(1);
+            }
+            &.mt0 {
+                margin-top: 0px;
+            }
+            &.ml0 {
+                margin-left: 0px;
+            }
+            &:hover {
+                .app__icon {
+                    right: -100%;
+                    opacity: 0;
+                }
+                .app__summary {
+                    left: 0;
+                    opacity: 1;
+                }
+                .summary__text {
+                    transform: translateX(0);
+                }
+            }
+            .app__item_name {
+                margin: 45px 0 0 50px;
+                font-family: MicrosoftYaHei-Bold;
+                font-size: 22.4px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 22px;
+                letter-spacing: 0.9px;
+                color: #000000;
+            }
+            .app__item_content {
+                position: relative;
+                flex: 1;
+            }
+            .app__summary {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                transition: left .2s ease
+            }
+            .summary__line-icon {
+                display: inline-block;
+                width: 22px;
+                height: 5px;
+                margin: 24px 0 0 50px;
+                background-color: #596186;
+                border-radius: 2px;
+            }
+            .summary__text {
+                flex: 1;
+                padding: 24px 63px 24px 50px;
+                font-family: MicrosoftYaHei;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 22px;
+                letter-spacing: 0.6px;
+                color: #596186;
+                word-break: break-all;
+                overflow: hidden;
+                transform: translateX(-100%);
+                transition: transform .1s ease .2s
+            }
+            .app__icon {
+                position: absolute;
+                right: 42px;
+                bottom: 41px;
+                opacity: 1;
+                transition: right .2s ease, opacity .2s ease
+            }
+            .app__logo {
+                width: 113px;
+            }
+        }
+    }
+    .page__btn {
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 34px;
+        margin-top: -17px;
+        &.page__left {
+            left: 34px;
+        }
+        &.page__right {
+            right: 34px;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -17px;
+            margin-left: -10px;
+            display: inline-block;
+            width: 20px;
+            height: 34px;
+            opacity: 1;
+            &.left::after {
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                display: inline-block;
+                content: "";
+                width: 22px;
+                height: 22px;
+                border: solid rgba($color: #939393, $alpha: 0.3);
+                border-width: 3px 0px 0 3px;
+                -webkit-transform: translate(0, -50%) rotate(-45deg);
+                transform: translate(0, -50%) rotate(-45deg);
+            }
+            &.right::after {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                display: inline-block;
+                content: "";
+                width: 22px;
+                height: 22px;
+                border: solid rgba($color: #939393, $alpha: 0.3);
+                border-width: 3px 3px 0 0px;
+                -webkit-transform: translate(0, -50%) rotate(45deg);
+                transform: translate(0, -50%) rotate(45deg);
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        height: 112px;
+        padding-bottom: 40px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .page-label {
+        align-items: center;
+        justify-content: center;
+        .label {
+            width: 39px;
+            height: 7px;
+            margin-left: 15px;
+            background-color: #6a7a92;
+            opacity: 0.32;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        .active {
+            background-color: #4162ff;
+            opacity: 1;
+        }
+    }
+    .copyright {
+        margin-top: 40px;
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        color: #a9a9a9;
+    }
+}
+
+.user-menu {
+    position: absolute;
+    z-index: 9999;
+    width: 150px;
+    // height: 109px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 5px 0px rgba(191, 192, 194, 0.3);
+    border: solid 1px #e5e5e5;
+    padding-top: 6px;
+    .menu-item {
+        height: 36px;
+        line-height: 36px;
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 0px;
+        letter-spacing: 0px;
+        color: #333333;
+        background-color: #ffffff;
+        align-items: center;
+        padding-left: 20px;
+        cursor: pointer;
+        &:hover {
+            background-color: #ecedef;
+        }
+        &>span {
+            display: inline-block;
+        }
+        .ic_home {
+            width: 0.16rem;
+            height: 0.16rem;
+            margin: 0.01rem 0.12rem 0 0;
+            background: url('/modules/portal/static/images/public/home-icon.png') no-repeat center center;
+        }
+        .ic_user {
+            width: 16px;
+            height: 16px;
+            margin: 1px 12px 0 0;
+            background: url('/modules/portal/static/images/public/user-icon.png') no-repeat center center;
+        }
+        .ic_password {
+            width: 16px;
+            height: 16px;
+            margin: 1px 12px 0 0;
+            background: url('/modules/portal/static/images/public/password-icon.png') no-repeat center center;
+        }
+        .ic_version {
+            width: 16px;
+            height: 16px;
+            margin: 1px 12px 0 0;
+            background: url('/modules/portal/static/images/public/version-icon.png') no-repeat center center;
+        }
+        .ic_logout {
+            width: 16px;
+            height: 16px;
+            margin: 1px 12px 0 0;
+            background: url('/modules/portal/static/images/public/logout-icon.png') no-repeat center center;
+        }
+        &.active {
+            background-color: #ecedef;
+        }
+    }
+}
+
+.user-info-win {
+    width: 556px;
+    height: auto;
+    .md-content {
+        background-color: #ffffff;
+        .contBox {
+            padding: 0 30px 20px 30px;
+            .user-info-content {
+                .baseInfo {
+                    padding: 30px 0;
+                    border-bottom: 1px solid #e5e5e5;
+                    .leftContent {
+                        width: 80px;
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                    .rightContent {
+                        flex: 1;
+                        padding-left: 30px;
+                        .info-wrap {
+                            width: 100%;
+                            height: 100%;
+                            flex-wrap: wrap;
+                            .item {
+                                width: 50%;
+                                height: 26px;
+                                line-height: 26px;
+                                font-family: MicrosoftYaHei;
+                                font-size: 13px;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                letter-spacing: 0px;
+                                overflow: hidden;
+                                &.time {
+                                    width: 100%;
+                                }
+                                .name {
+                                    color: #999999;
+                                }
+                                .value {
+                                    color: #333333;
+                                }
+                            }
+                        }
+                    }
+                }
+                .info-row {
+                    height: 60px;
+                    line-height: 60px;
+                    font-family: MicrosoftYaHei;
+                    font-size: 13px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    letter-spacing: 0px;
+                    margin-top: 20px;
+                    &.oldpasswd {
+                        margin-top: 30px;
+                    }
+                    .name {
+                        line-height: 28px;
+                        color: #666666;
+                    }
+                    .value {
+                        height: 36px;
+                        line-height: 36px;
+                        font-size: 14px!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.confirm-logout {
+    width: 510px;
+    .md-content {
+        background-color: #ffffff;
+        .contBox {
+            padding: 20px 30px;
+            .logoutTip {
+                font-family: MicrosoftYaHei;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 24px;
+                letter-spacing: 0px;
+                color: #333333;
+            }
+        }
+    }
+}
+
+//版本信息
+.version-info-win {
+    width: 433px;
+    .md-content {
+        background: #fff;
+        position: relative;
+        .contentBox {
+            padding: 30px;
+            .version-info {
+                width: 373px;
+                // height: 220px;
+                .info-title {
+                    padding: 20px 0 10px 0;
+                    height: 17px;
+                    line-height: 17px;
+                    span {
+                        font-family: Microsoft YaHei;
+                        font-size: 16px;
+                        font-weight: normal;
+                        letter-spacing: 0px;
+                        color: #111111;
+                    }
+                }
+                .info-sub-title {
+                    font-family: Microsoft YaHei;
+                    font-size: 14px;
+                    font-weight: normal;
+                    letter-spacing: 0px;
+                    color: #666666;
+                    height: 14px;
+                    line-height: 14px;
+                    padding-bottom: 20px;
+                    text-align: center;
+                }
+                .info-split {
+                    height: 1px;
+                    background-color: #e5e5e5;
+                }
+                .info-content {
+                    margin-top: 20px;
+                    .warn-icon i {
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        background: url('/modules/portal/static/images/public/warn-icon.png') no-repeat center center;
+                        margin-top: 2px
+                    }
+                    .warn-text {
+                        font-family: MicrosoftYaHei;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        color: #888888;
+                        margin-left: 8px;
+                    }
+                }
+                .info-copy {
+                    margin-top: 16px;
+                    margin-bottom: 30px;
+                    .copyright-icon i {
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        background: url('/modules/portal/static/images/public/copyright-icon.png') no-repeat center center;
+                        margin-top: 2px
+                    }
+                    .copyright-text {
+                        font-family: MicrosoftYaHei;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        color: #888888;
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//修改密码
+.modify-pwd-win {
+    width: 350px;
+    .md-content {
+        background: #fff;
+        position: relative;
+        .contentBox {
+            padding: 0 30px 20px 30px;
+            .info-row {
+                height: 60px;
+                line-height: 60px;
+                font-family: MicrosoftYaHei;
+                font-size: 13px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                margin-top: 20px;
+                &.newpasswd {
+                    height: 100px;
+                }
+                &.oldpasswd {
+                    margin-top: 30px;
+                }
+                .name {
+                    line-height: 28px;
+                    color: #666666;
+                    span {
+                        white-space: nowrap;
+                    }
+                }
+                .value {
+                    height: 36px;
+                    line-height: 36px;
+                    font-size: 14px!important;
+                    .el-input.error {
+                        .el-input__inner {
+                            border: 1px solid red;
+                        }
+                    }
+                }
+            }
+        }
+        .btn_cancel {
+            width: 150px!important;
+        }
+        .btn_determine {
+            width: 150px!important;
+        }
+    }
+    .strong {
+        margin: 5px 0;
+        .color-item {
+            float: left;
+            width: 40px;
+            margin-right: 5px;
+            text-align: center;
+            .bg {
+                width: 100%;
+                height: 10px;
+                background: #ccc;
+                &.weakstrong {
+                    background: #f00;
+                }
+                &.middlestrong {
+                    background: #9f8;
+                }
+                &.highstrong {
+                    background: #0f0;
+                }
+            }
+            .desc {
+                line-height: 24px;
+            }
+        }
+    }
+    .alert {
+        line-height: 24px;
+        color: #f00;
+    }
+}

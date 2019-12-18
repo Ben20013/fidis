@@ -1,0 +1,14 @@
+{
+    "name": "Openframe",
+    "alias": "openframe",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Openframe\\Providers\\OpenframeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

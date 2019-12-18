@@ -1,0 +1,768 @@
+    /******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+    /* 清除内外边距 */
+    
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    blockquote,
+    /* structural elements 结构元素 */
+    
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    /* list elements 列表元素 */
+    
+    pre,
+    /* text formatting elements 文本格式元素 */
+    
+    fieldset,
+    lengend,
+    button,
+    input,
+    textarea,
+    /* form elements 表单元素 */
+    
+    th,
+    td {
+        /* table elements 表格元素 */
+        margin: 0;
+        padding: 0;
+    }
+    /* 设置默认字体 */
+    
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        /* for ie */
+        /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+        font: 12px/1 Tahoma, Helvetica, Arial, "\5B8B\4F53", sans-serif;
+        font-family: MicrosoftYaHei;
+        /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+    }
+    
+    h1 {
+        font-size: 18px;
+        /* 18px / 12px = 1.5 */
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    h3 {
+        font-size: 14px;
+    }
+    
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+    }
+    /* address, cite, dfn, em, var {
+        font-style: normal;
+    } */
+    /* 将斜体扶正 */
+    
+    code,
+    kbd,
+    pre,
+    samp,
+    tt {
+        font-family: "Courier New", Courier, monospace;
+    }
+    /* 统一等宽字体 */
+    
+    small {
+        font-size: 12px;
+    }
+    /* 小于 12px 的中文很难阅读，让 small 正常化 */
+    /* 重置列表元素 */
+    
+    ul,
+    ol {
+        list-style: none;
+    }
+    /* 重置文本格式元素 */
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    /*a:hover { text-decoration: underline; }*/
+    
+    abbr[title],
+    acronym[title] {
+        /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+        border-bottom: 1px dotted;
+        cursor: help;
+    }
+    
+    q:before,
+    q:after {
+        content: '';
+    }
+    /* 重置表单元素 */
+    
+    legend {
+        color: #000;
+    }
+    /* for ie6 */
+    
+    fieldset,
+    img {
+        border: none;
+    }
+    /* img 搭车：让链接里的 img 无边框 */
+    /* 注：optgroup 无法扶正 */
+    
+    button,
+    input,
+    select,
+    textarea {
+        font-size: 100%;
+        /* 使得表单元素在 ie 下能继承字体大小 */
+    }
+    /* 重置表格元素 */
+    
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: 100%;
+        border-spacing: 0;
+    }
+    
+    img {
+        display: block;
+    }
+    /* 重置 hr */
+    
+    hr {
+        border: none;
+        height: 1px;
+    }
+    /* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+    
+    html {
+        overflow: auto;
+        height: 100%;
+    }
+    
+    body {
+        height: 100%;
+        -webkit-text-size-adjust: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main {
+        height: 100%;
+    }
+    /*  浮动  */
+    
+    .fl {
+        float: left
+    }
+    
+    .fr {
+        float: right
+    }
+    /*  清除浮动  */
+    
+    .clearfix:after {
+        content: " ";
+        display: block;
+        clear: both;
+        visibility: hidden;
+    }
+    
+    .flex-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -moz-flex;
+    }
+    
+    .flex-column {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .flex-con-1 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+        z-index: 0
+    }
+    
+    .flex-con-2 {
+        -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2
+    }
+    
+    .flex-pack-center {
+        /*水平居中*/
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    
+    .flex-center {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+    /*ios按钮的问题*/
+    
+    input[type=button],
+    input[type=submit],
+    input[type=file],
+    button {
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+    
+    .changeLine {
+        word-break: break-all;
+        word-wrap: break-word;
+    }/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+.mix-no-border .el-input__inner{
+  height: 34px!important;
+  border:none!important;
+}
+.mix-input .el-input__inner,.mix-input.el-input__inner{
+  height: 36px;
+	border-radius: 2px;
+	border: solid 1px #dddddd;
+  font-family: MicrosoftYaHei;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+}
+.mix-input.el-range-editor .el-range-input{
+  height: 30px;
+  font-family: MicrosoftYaHei;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+}
+.mix-input.el-range-editor.is-active{
+  border: solid 1px #4162ff;
+}
+.mix-input .el-textarea__inner{
+  border-radius: 2px;
+	border: solid 1px #dddddd;
+}
+.mix-select .el-input__inner{
+  width: 100%;
+  height: 36px;
+  border-radius: 2px;
+	border: solid 1px #dddddd;
+  font-family: MicrosoftYaHei;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+}
+.mix-input .el-input__inner:focus,.mix-input .el-textarea__inner:focus{
+  border: solid 1px #4162ff;
+}
+.mix-select.el-select .el-input.is-focus .el-input__inner,.mix-input.el-select .el-input__inner:focus{
+  border-color: #4162ff;
+}
+
+.mix-pagination.el-pagination .el-select .el-input .el-input__inner,.mix-pagination .el-pagination__editor.el-input .el-input__inner{
+  height: 28px;
+  line-height: 28px;
+  border-radius:2px;
+}
+.mix-pagination.el-pagination .el-select .el-input .el-input__inner:hover,.mix-pagination .el-select .el-input.is-focus .el-input__inner,.mix-pagination .el-pagination__editor.el-input .el-input__inner:focus{
+  border-color: #4162ff;
+}
+.mix-collapse .el-collapse-item__header{
+  border-bottom: none;
+  padding-left: 30px;
+  font-family: MicrosoftYaHei;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #111111;
+}
+.mix-collapse .el-collapse-item__header.is-active{
+  border-bottom: 1px solid #dddddd;
+}
+.mix-select .el-input__icon{
+  line-height: 28px;
+}
+.mix-select.el-select .el-input .el-select__caret{
+  font-weight: bold;
+  color: #333333;
+}
+.mix-input.el-date-editor .el-range__icon{
+  line-height: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+.mix-input .el-input__icon.el-icon-time{
+  line-height: 28px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.mix-input-32 .el-input__inner,.mix-input-32.el-input__inner,.mix-select-32 .el-input__inner{
+  height: 32px;
+}
+.mix-input-32.el-range-editor .el-range-input{
+  height: 26px;
+}
+.mix-input-32 .el-range-separator{
+  line-height: 24px;
+}
+.mix-no-border-32 .el-input__inner{
+  height: 30px!important;
+  border:none!important;
+}
+.mix-input.mix-no-right-border-radius,.mix-input.mix-no-right-border-radius .el-input__inner{
+  border-radius: 2px 0 0 2px;
+}
+
+.mix-pagination li.number{
+  background-color: #ffffff;
+}
+.mix-pagination li.number.active,.mix-pagination.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background-color: #4162ff;
+}
+.mix-el-table table th{
+  background-color: #ececec;
+  height: 40px;
+  line-height: 40px;
+  font-family: MicrosoftYaHei;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333333;
+  text-align: left;
+  border-right: 1px solid #ffffff;
+  padding: 0;
+}
+.mix-el-table table td{
+  height: 48px;
+  padding: 0;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: MicrosoftYaHei;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: #777777;
+}
+.mix-el-talbe.el-table--striped .el-table__body tr.el-table__row--striped td{
+  background-color: #f9f9f9;
+}
+.mix-el-table.el-table th.is-leaf{
+  border-bottom: none;
+}
+
+.el-upload--picture-card{
+  width: 80px!important;
+  height: 80px!important;
+  line-height: 80px!important;
+  border-radius: 2px!important;
+}
+.el-upload-list--picture-card .el-upload-list__item{
+  width: 80px!important;
+  height: 80px!important;
+  border-radius: 2px!important;
+}
+.el-select{
+  width: 100%;
+}
+table th{
+  font-weight: normal;
+}
+/* 单选框 */
+.el-radio__label,.el-radio__input.is-checked+.el-radio__label{
+  color:#666666;
+}
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none;
+}
+
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+.md-modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -moz-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+}
+
+.md-modal {
+  position: absolute;
+  width: 3.28rem;
+  height: auto;
+  max-height: 100%;
+  overflow: hidden;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.md-mask {
+  z-index: 900;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.md-mask.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.md-effect-1 .md-content {
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.md-show.md-effect-1 {
+  visibility: visible;
+}
+
+.md-show.md-effect-1 .md-content {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.md-loading {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.md-loading .md-loading-icon {
+  margin: 0 auto;
+  font-size: 0.3rem;
+  color: #4162ff;
+}
+
+.md-loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.titleBox {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 0.52rem;
+  line-height: 0.52rem;
+  background-color: #191f28;
+}
+
+.titleBox .title {
+  font-family: MicrosoftYaHei;
+  font-size: 0.16rem;
+  font-weight: normal;
+  font-stretch: normal;
+  margin-left: 0.29rem;
+  letter-spacing: 0rem;
+  color: #ffffff;
+}
+
+.titleBox .iconWrap {
+  margin-right: 0.2rem;
+}
+
+.titleBox .iconWrap i.close {
+  display: block;
+  width: 0.16rem;
+  height: 0.16rem;
+  background: url("/modules/portal/static/images/public/close-icon.png") no-repeat center center;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.titleBox .iconWrap i.close:hover {
+  opacity: 0.8;
+}
+
+.buttomBox {
+  -webkit-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  height: 1rem;
+}
+
+.buttomBox .btn_cancel {
+  width: 2.2rem;
+  height: 0.4rem;
+  background-color: #f9f9f9;
+  border: solid 0.01rem #dddddd;
+  margin-right: 0.1rem;
+  font-family: MicrosoftYaHei;
+  font-size: 0.16rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.4rem;
+  letter-spacing: 0rem;
+  color: #333333;
+}
+
+.buttomBox .btn_cancel:focus {
+  border-color: #dddddd;
+  outline: none;
+}
+
+.buttomBox .btn_cancel:hover {
+  background-color: #ffffff;
+}
+
+.buttomBox .btn_determine {
+  width: 2.2rem;
+  height: 0.4rem;
+  background-color: #4162ff;
+  border: 0;
+  margin-right: 0.2rem;
+  font-family: MicrosoftYaHei;
+  font-size: 0.16rem;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rem;
+  color: #ffffff;
+}
+
+.buttomBox .btn_determine:focus {
+  border-color: #4162ff;
+  outline: none;
+}
+
+.buttomBox .btn_determine:hover {
+  background-color: #6781fd;
+}
+
+.mix-theme-bright .main-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: 100% 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("/modules/portal/static/images/mix-theme-bright.jpg") no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.mix-theme-dark .main-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: 100% 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("/modules/portal/static/images/mix-theme-dark.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.hide {
+  display: none;
+}
+

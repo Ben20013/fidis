@@ -1,0 +1,14 @@
+{
+    "name": "Pro",
+    "alias": "pro",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Pro\\Providers\\ProServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,469 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+@import "../common.scss";
+@import "../icon.scss";
+@import "../dialog.scss";
+.header {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    background: #fff;
+    box-shadow: 0px 1px 6px 0px #bbbbbb;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    .left-header {
+        flex: 1;
+        .nav-icon {
+            width: 48px;
+            border-right: 1px solid #e5e5e5;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            &:hover,
+            &:active {
+                background-color: #eeeeee;
+            }
+            i {
+                display: block;
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+            }
+            i.expand {
+                background: url('/modules/portal/static/images/public/nav-not-expand-icon.png') no-repeat center center;
+            }
+            i.not-expand {
+                background: url('/modules/portal/static/images/public/nav-expand-icon.png') no-repeat center center;
+            }
+        }
+        .time-tip {
+            flex: 1;
+            padding-left: 15px;
+            font-family: MicrosoftYaHei;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #666666;
+            align-items: center;
+            span.time {
+                font-family: SFUIText-Regular;
+            }
+        }
+    }
+    .right-header {
+        flex: 1;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        align-items: center;
+        .version {
+            width: 18px;
+            padding: 0 15px;
+            border-left: 1px solid #eeeeee;
+            .version-icon {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                cursor: pointer;
+                background: url('/modules/portal/static/images/public/version-icon.png') no-repeat center center;
+            }
+            &:hover,
+            &:active {
+                background-color: #eeeeee;
+            }
+        }
+        .version-info {
+            position: absolute;
+            top: 50px;
+            right: 220px;
+            z-index: 9999;
+            width: 373px;
+            // height: 220px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 5px 0px rgba(191, 192, 194, 0.3);
+            border: solid 1px #e5e5e5;
+            padding: 0 22px;
+            .info-title {
+                text-align: center;
+                padding: 20px 0 10px 0;
+                height: 17px;
+                line-height: 17px;
+                span {
+                    font-family: Microsoft YaHei;
+                    font-size: 16px;
+                    font-weight: normal;
+                    letter-spacing: 0px;
+                    color: #111111;
+                }
+            }
+            .info-sub-title {
+                font-family: Microsoft YaHei;
+                font-size: 14px;
+                font-weight: normal;
+                letter-spacing: 0px;
+                color: #666666;
+                height: 14px;
+                line-height: 14px;
+                padding-bottom: 20px;
+                text-align: center;
+            }
+            .info-split {
+                height: 1px;
+                background-color: #e5e5e5;
+            }
+            .info-content {
+                margin-top: 20px;
+                .warn-icon i {
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    background: url('/modules/portal/static/images/public/warn-icon.png') no-repeat center center;
+                    margin-top: 2px
+                }
+                .warn-text {
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 20px;
+                    letter-spacing: 0px;
+                    color: #888888;
+                    margin-left: 8px;
+                }
+            }
+            .info-copy {
+                margin-top: 16px;
+                margin-bottom: 30px;
+                .copyright-icon i {
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    background: url('/modules/portal/static/images/public/copyright-icon.png') no-repeat center center;
+                    margin-top: 2px
+                }
+                .copyright-text {
+                    font-family: MicrosoftYaHei;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 20px;
+                    letter-spacing: 0px;
+                    color: #888888;
+                    margin-left: 8px;
+                }
+            }
+        }
+        .full-screen {
+            width: 18px;
+            padding: 0 15px;
+            border-left: 1px solid #eeeeee;
+            &:hover,
+            &:active {
+                background-color: #eeeeee;
+            }
+            .full-screen-icon {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                background: url('/modules/portal/static/images/public/full-screen-icon.png') no-repeat center center;
+                cursor: pointer;
+            }
+        }
+        .feedback-wrap {
+            width: 18px;
+            padding: 0 15px;
+            border-left: 1px solid #eeeeee;
+            &:hover,
+            &:active {
+                background-color: #eeeeee;
+            }
+            .feedback-icon {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                background: url('/modules/portal/static/images/public/feedback-icon.png') no-repeat center center;
+                cursor: pointer;
+            }
+        }
+        .help-wrap {
+            width: 18px;
+            padding: 0 15px;
+            border-left: 1px solid #eeeeee;
+            &:hover,
+            &:active {
+                background-color: #eeeeee;
+            }
+            .help-icon {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                background: url('/modules/portal/static/images/public/help-icon.png') no-repeat center center;
+                cursor: pointer;
+            }
+        }
+        .user-wrap {
+            height: 100%;
+            padding: 0 15px;
+            border-left: 1px solid #eeeeee;
+            cursor: pointer;
+            &:hover,
+            &:active {
+                background-color: #eeeeee;
+            }
+            .user-icon {
+                width: 26px;
+                height: 26px;
+            }
+            .user-name {
+                color: #333333;
+                font-family: MicrosoftYaHei;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                margin-left: 12px;
+            }
+            .arrow-down {
+                width: 10px;
+                height: 10px;
+                margin-left: 9px;
+                background: url('/modules/portal/static/images/public/arrow-down.png') no-repeat center center;
+            }
+        }
+        .user-menu,
+        .language-menu {
+            position: absolute;
+            top: 50px;
+            right: 0px;
+            z-index: 9999;
+            width: 162px;
+            height: 37px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 5px 0px rgba(191, 192, 194, 0.3);
+            border: solid 1px #e5e5e5;
+            padding-top: 6px;
+            .menu-item {
+                height: 36px;
+                line-height: 36px;
+                font-family: MicrosoftYaHei;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 0px;
+                letter-spacing: 0px;
+                color: #333333;
+                background-color: #ffffff;
+                align-items: center;
+                padding-left: 20px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #ecedef;
+                }
+                &>span {
+                    display: inline-block;
+                }
+                .ic_home {
+                    width: 16px;
+                    height: 16px;
+                    margin: 1px 12px 0 0;
+                    background: url('/modules/portal/static/images/public/home-icon.png') no-repeat center center;
+                }
+                .ic_user {
+                    width: 16px;
+                    height: 16px;
+                    margin: 1px 12px 0 0;
+                    background: url('/modules/portal/static/images/public/user-icon.png') no-repeat center center;
+                }
+                .ic_language {
+                    width: 16px;
+                    height: 16px;
+                    margin: 1px 12px 0 0;
+                    background: url('/modules/portal/static/images/public/language-icon.png') no-repeat center center;
+                }
+                .ic_logout {
+                    width: 16px;
+                    height: 16px;
+                    margin: 1px 12px 0 0;
+                    background: url('/modules/portal/static/images/public/logout-icon.png') no-repeat center center;
+                }
+                .check {
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                    margin-right: 5px;
+                    text-align: center;
+                    i.active {
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: #4162ff;
+                    }
+                }
+                &.active {
+                    background-color: #ecedef;
+                }
+            }
+        }
+        .language-menu {
+            width: 120px;
+            height: 73px;
+            top: 93px;
+            right: 162px;
+            .menu-item {
+                padding-left: 15px;
+            }
+        }
+    }
+}
+
+.user-info-win {
+    width: 556px;
+    height: auto;
+    .md-content {
+        background-color: #ffffff;
+        .contBox {
+            padding: 0 30px 20px 30px;
+            .user-info-content {
+                .baseInfo {
+                    padding: 30px 0;
+                    border-bottom: 1px solid #e5e5e5;
+                    .leftContent {
+                        width: 80px;
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                    .rightContent {
+                        flex: 1;
+                        padding-left: 30px;
+                        .info-wrap {
+                            width: 100%;
+                            height: 100%;
+                            flex-wrap: wrap;
+                            .item {
+                                width: 50%;
+                                height: 26px;
+                                line-height: 26px;
+                                font-family: MicrosoftYaHei;
+                                font-size: 13px;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                letter-spacing: 0px;
+                                overflow: hidden;
+                                &.time {
+                                    width: 100%;
+                                }
+                                .name {
+                                    color: #999999;
+                                }
+                                .value {
+                                    color: #333333;
+                                }
+                            }
+                        }
+                    }
+                }
+                .info-row {
+                    height: 60px;
+                    line-height: 60px;
+                    font-family: MicrosoftYaHei;
+                    font-size: 13px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    letter-spacing: 0px;
+                    margin-top: 20px;
+                    &.oldpasswd {
+                        margin-top: 30px;
+                    }
+                    .name {
+                        line-height: 28px;
+                        color: #666666;
+                    }
+                    .value {
+                        height: 36px;
+                        line-height: 36px;
+                        font-size: 14px!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.confirm-logout {
+    width: 510px;
+    .md-content {
+        background-color: #ffffff;
+        .contBox {
+            padding: 20px 30px;
+            .logoutTip {
+                font-family: MicrosoftYaHei;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 24px;
+                letter-spacing: 0px;
+                color: #333333;
+            }
+        }
+    }
+}
+
+.feedback-win {
+    width: 800px;
+    height: auto;
+    max-height: 700px;
+    overflow: hidden;
+    .md-content {
+        max-height: 700px;
+        background-color: #ffffff;
+        overflow: hidden;
+        .contBox {
+            padding: 0px 30px 20px 30px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .feedback-content {
+                .row {
+                    height: 36px;
+                    line-height: 36px;
+                    margin-top: 20px;
+                    &.desc {
+                        height: auto;
+                    }
+                    .name {
+                        font-family: MicrosoftYaHei;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        letter-spacing: 0px;
+                        color: #666666;
+                    }
+                    .value {
+                        width: 497px;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

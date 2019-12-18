@@ -1,0 +1,243 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../common.scss";
+.login-box {
+    width: 100%;
+    height: 100%;
+    background-color: #ecedef;
+    overflow: auto;
+    .header {
+        min-width: 1200px;
+        height: 60px;
+        background-color: #0d1015;
+        align-items: center;
+        @include flex-pack-center();
+        overflow: hidden;
+        .logo {
+            width: 1200px;
+        }
+    }
+    .middle-content {
+        width: 100%;
+        min-width: 1200px;
+        height: 650px;
+        background-color: #111e31;
+        position: relative;
+        .tree-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .login-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            @include flex-pack-center();
+            background: url($path+'/modules/pro/static/images/login/banner.png') no-repeat center center;
+            .content {
+                width: 1200px;
+                height: 416px;
+                margin-top: 77px;
+                align-items: center;
+                @include flex-pack-justify();
+                .left-content {
+                    // width: 411px;
+                    height: 139px;
+                    margin-left: 84px;
+                    margin-top: -80px;
+                    .pc-icon {
+                        width: 32px;
+                        height: 28px;
+                        background: url($path+'/modules/pro/static/images/login/pc_icon.png') no-repeat center center;
+                    }
+                    .news-title {
+                        height: 32px;
+                        line-height: 32px;
+                        font-family: MicrosoftYaHei;
+                        font-size: 32px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        letter-spacing: 0px;
+                        color: #ffffff;
+                        margin-top: 36px;
+                        span {
+                            font-family: Microsoft YaHei;
+                        }
+                    }
+                    .news-desc {
+                        height: 15px;
+                        font-family: MicrosoftYaHei;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        line-height: 15px;
+                        letter-spacing: 0px;
+                        color: #9ea6ae;
+                        margin-top: 28px;
+                    }
+                }
+                .right-content {
+                    width: 400px;
+                    height: 416px;
+                    background-color: #ffffff;
+                    border-radius: 4px;
+                    .title-wrap {
+                        height: 20px;
+                        font-family: MicrosoftYaHei;
+                        font-size: 20px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        color: #333333;
+                        text-align: center;
+                        margin-top: 56px;
+                        span {
+                            font-family: Microsoft YaHei;
+                        }
+                    }
+                    .username-wrap,
+                    .error-wrap {
+                        margin-top: 48px;
+                        text-align: center;
+                        .err-tip {
+                            width: 322px;
+                            height: 30px;
+                            line-height: 30px;
+                            background-color: #fed3d3;
+                            border-radius: 2px;
+                            margin: 0 auto;
+                            text-align: left;
+                            i.err-icon {
+                                display: inline-block;
+                                width: 14px;
+                                height: 14px;
+                                background: url($path+'/modules/pro/static/images/login/error_icon.png') no-repeat center center;
+                                vertical-align: -2px;
+                                margin-left: 14px;
+                            }
+                            span.err-txt {
+                                font-family: MicrosoftYaHei;
+                                font-size: 12px;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                line-height: 0px;
+                                letter-spacing: 0px;
+                                color: #ff0000;
+                            }
+                        }
+                        input[name="username"] {
+                            width: 307px;
+                            height: 46px;
+                            background-color: #ffffff;
+                            border-radius: 2px;
+                            border: solid 1px #dddddd;
+                            font-size: 14px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            line-height: 0px;
+                            letter-spacing: 0px;
+                            color: #666666;
+                            padding-left: 13px;
+                            &:focus,
+                            &:active {
+                                border: 1px solid #4162ff;
+                                outline: none;
+                            }
+                            &.active {
+                                font-family: ArialMT;
+                                color: #333333;
+                            }
+                        }
+                        &.is-error {
+                            margin-top: 8px;
+                        }
+                    }
+                    .password-wrap {
+                        margin-top: 23px;
+                        text-align: center;
+                        input[name="password"] {
+                            width: 307px;
+                            height: 46px;
+                            background-color: #ffffff;
+                            border-radius: 2px;
+                            border: solid 1px #dddddd;
+                            font-size: 14px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            line-height: 0px;
+                            letter-spacing: 0px;
+                            color: #666666;
+                            padding-left: 13px;
+                            &:focus,
+                            &:active {
+                                border: 1px solid #4162ff;
+                                outline: none;
+                            }
+                            &.active {
+                                font-family: ArialMT;
+                                color: #333333;
+                            }
+                        }
+                        ;
+                    }
+                    .button-wrap {
+                        margin-top: 49px;
+                        text-align: center;
+            @include flex-pack-center();
+            .btn-container{
+              width: 322px;
+              @include flex-pack-justify();
+            }
+            .login-btn,.register-btn{
+                            display: inline-block;
+              // width: 150px;
+                            width: 322px;
+                            height: 46px;
+                            background-color: #4162ff;
+                            border-radius: 2px;
+                            font-family: MicrosoftYaHei;
+                            font-size: 16px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            line-height: 46px;
+                            letter-spacing: 0px;
+                            color: #ffffff;
+                            cursor: default;
+                            &:active,
+                            &:hover {
+                                background-color: #6781fd;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        min-width: 1200px;
+        margin: 30px 0;
+        p {
+            text-align: center;
+            font-family: MicrosoftYaHei;
+            font-size: 14px;
+            font-weight: normal;
+            letter-spacing: 0px;
+            color: #959eb4;
+        }
+    }
+}

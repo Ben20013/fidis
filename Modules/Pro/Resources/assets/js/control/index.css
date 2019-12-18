@@ -1,0 +1,498 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+
+/* control 表格样式 start */
+
+.mix-control__block {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+    background-color: #ffffff;
+}
+
+.mix-control__block:first-child {
+    margin-top: 0;
+}
+
+.mix-control__block-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.mix-control__block-header_title {
+    flex: 1;
+    padding: 0 20px;
+    font-family: Arial-BoldMT;
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #111111;
+}
+
+.mix-control__block-body {
+    padding: 5px;
+    overflow-x: hidden;
+}
+
+table.mix-control__table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+table.mix-control__table td {
+    padding: 2px;
+    /* border:1px solid #111111; */
+    text-align: center;
+    vertical-align: top;
+    word-break: keep-all;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+table.mix-control__table td .mix-control__box-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+table.mix-control__table tr td div.mix-control__box-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: solid 1px #e5e5e5;
+    overflow: hidden;
+}
+
+table.mix-control__table div.mix-control__box-container .mix-control__box_header {
+    display: flex;
+    height: 40px;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #111111;
+    background-color: #e6e6e6;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.mix-control__table div.mix-control__box-container .mix-control__box_header .name {
+    flex: 1;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+table.mix-control__table div.mix-control__box-container .mix-control__box_header .value {
+    font-family: Humanist777BT-BlackCondensedB;
+    font-size: 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: -1.2px;
+    color: #4162ff;
+}
+
+table.mix-control__table div.mix-control__box-container .mix-control__box_body {
+    flex: 1;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control__button {
+    width: 85%;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 12px;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    background-color: #4162ff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+table.mix-control__table .mix-control_increase {
+    width: 32px;
+    height: 38px;
+    line-height: 28px;
+    background-color: #ffffff;
+    border-radius: 2px 0px 0px 2px;
+    border: solid 1px #dddddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+table.mix-control__table .mix-control_increase i.icon {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    background-color: #999999;
+    border-radius: 1px;
+}
+
+table.mix-control__table .mix-control_increase i.icon::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 6px;
+    width: 2px;
+    height: 14px;
+    background-color: #999999;
+    border-radius: 1px;
+}
+
+table.mix-control__table .input__set {
+    width: 90%;
+    height: 40%;
+    /* margin-top: 12px; */
+    align-items: center;
+    justify-content: space-between;
+    /* overflow: hidden; */
+}
+
+table.mix-control__table .mix-control_input {
+    flex: 1;
+    height: 38px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control_input input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-family: Humanist777BT-BlackCondensedB;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: -1.2px;
+    color: #0e1b2a;
+    text-align: center;
+}
+
+table.mix-control__table .mix-control_decrease {
+    width: 32px;
+    height: 38px;
+    line-height: 28px;
+    background-color: #ffffff;
+    border-radius: 0px 2px 2px 0px;
+    border: solid 1px #dddddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+table.mix-control__table .mix-control_decrease i.icon {
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    background-color: #999999;
+    border-radius: 1px;
+}
+
+
+/* control 表格样式 end */
+
+
+/* item style start */
+
+
+/* switch control style start */
+
+table.mix-control__table .mix-control__switchgroup {
+    flex: 1;
+    padding: 5px 5px;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control__switch_wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control__switch {
+    flex: 1;
+    padding: 0 10px;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+    border: solid 1px #dddddd;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control__switch:first-child {
+    margin-top: 0;
+}
+
+table.mix-control__table .mix-control__switch_name {
+    font-family: MicrosoftYaHei;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 15px;
+    letter-spacing: 0px;
+    color: #111111;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control__switch_btn {
+    position: relative;
+    width: 68px;
+    height: 30px;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox {
+    display: none;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_left {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    left: 3px;
+    top: 50%;
+    margin-top: -13px;
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox:checked+.mix-control__switch_left {
+    left: 100%;
+    margin-left: -29px;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_right {
+    position: absolute;
+    display: block;
+    width: 68px;
+    height: 30px;
+    top: 0;
+    border-radius: 15px;
+    transition: 0.4s;
+    background: #a7a7a7;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox:checked+.mix-control__switch_left+.mix-control__switch_right {
+    background: #4162ff;
+    transition: 0.4s;
+}
+
+table.mix-control__table .mix-control__switch_btn .switch__text {
+    padding: 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: MicrosoftYaHei;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox+.mix-control__switch_left+.mix-control__switch_right .switch__text_on {
+    visibility: hidden;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox:checked+.mix-control__switch_left+.mix-control__switch_right .switch__text_on {
+    visibility: visible;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox+.mix-control__switch_left+.mix-control__switch_right .switch__text_off {
+    visibility: visible;
+}
+
+table.mix-control__table .mix-control__switch_btn .mix-control__switch_checkbox:checked+.mix-control__switch_left+.mix-control__switch_right .switch__text_off {
+    visibility: hidden;
+}
+
+table.mix-control__table .mix-control__switchbtn {
+    position: relative;
+    width: 78px;
+    height: 36px;
+}
+
+table.mix-control__table .mix-control__switchbtn .mix-control__switch_checkbox {
+    display: none;
+}
+
+table.mix-control__table .mix-control__switchbtn .mix-control__switchbtn_style {
+    position: absolute;
+    display: block;
+    width: 78px;
+    height: 36px;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+    z-index: 1;
+    background: url('/modules/pro/static/images/public/switch-off.png') no-repeat center center;
+}
+
+table.mix-control__table .mix-control__switchbtn .mix-control__switch_checkbox:checked+.mix-control__switchbtn_style {
+    background: url('/modules/pro/static/images/public/switch-on.png') no-repeat center center;
+}
+
+
+/* switch control style end */
+
+
+/* btn group control style start */
+
+table.mix-control__table .mix-control__btngroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+table.mix-control__table .mix-control__btngroup_item {
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 16px;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    border-radius: 2px;
+    background-color: #dc3550;
+    cursor: pointer;
+}
+
+table.mix-control__table .mix-control__btngroup_item:first-child {
+    margin-top: 0;
+}
+
+
+/* btn group control style end */
+
+
+/* gauge set style start */
+
+table.mix-control__table .mix-control__gaugeset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+table.mix-control__table .gaugeset__gauge {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+table.mix-control__table .gauge__content_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+table.mix-control__table .gauge__content {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+table.mix-control__table .gauge__content_value {
+    flex: 1;
+    padding-top: 13px;
+    align-items: center;
+    justify-content: center;
+    font-family: Humanist777BT-BlackCondensedB;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: -2px;
+    color: #4162ff;
+}
+
+table.mix-control__table .gauge__content_name {
+    width: 48px;
+    height: 15px;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #111111;
+}
+
+
+/* gauge set style end */
+
+
+/* setcontrol style start */
+
+table.mix-control__table .mix-control__setcontrol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* setcontrol style end */
+
+
+/* item style end */

@@ -1,0 +1,37 @@
+﻿{
+    "version": "V1.6.3",
+    "introduce": "Fidis pro系统模块",
+    "release": "2019-03-21",
+    "modules": {
+        "admin": {
+            "version": "V1.6.3",
+            "introduce": "Fidis pro系统模块",
+            "release": "2019-03-21",
+        },
+        "api": {
+            "version": "V1.6.3",
+            "introduce": "Fidis pro系统模块",
+            "release": "2019-03-21",
+        },
+        "app": {
+            "version": "V1.6.3",
+            "introduce": "Fidis pro系统模块",
+            "release": "2019-03-21",
+        },
+        "portal": {
+            "version": "V1.6.3",
+            "introduce": "Fidis pro系统模块",
+            "release": "2019-03-21",
+        },
+        "pro": {
+            "version": "V1.6.3",
+            "introduce": "Fidis pro系统模块",
+            "release": "2019-03-21",
+        },
+        "workflow": {
+            "version": "V1.6.3",
+            "introduce": "Fidis pro系统模块",
+            "release": "2019-03-21",
+        }
+    }
+}

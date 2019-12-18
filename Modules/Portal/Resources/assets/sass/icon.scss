@@ -1,0 +1,191 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+
+@charset 'utf8';
+//@import "./conmon.scss";
+.mix-refresh-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/refresh-icon.png') no-repeat center center;
+}
+
+.mix-add-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/add-icon.png') no-repeat center center;
+}
+
+.mix-edit-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/edit-icon.png') no-repeat center center;
+}
+
+.mix-delete-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/delete-icon.png') no-repeat center center;
+}
+
+.mix-search-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/search-icon.png') no-repeat center center;
+}
+
+.mix-search-white-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/search-white-icon.png') no-repeat center center;
+}
+
+.mix-line-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/line-icon.png') no-repeat center center;
+}
+
+.mix-export-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/modules/portal/static/images/public/export-icon.png') no-repeat center center;
+}
+
+.ic_hui {
+    width: 13px;
+    height: 7px;
+    background: center no-repeat url("/static/image/icon/ic_hui.png");
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.ic_refresh {
+    width: 36px;
+    height: 36px;
+    background: center no-repeat url("/static/image/customer/ic_refresh.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_edit {
+    width: 36px;
+    height: 36px;
+    background: center no-repeat url("/static/image/customer/ic_edit.png");
+    background-size: 100%;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_show {
+    width: 36px;
+    height: 36px;
+    background: center no-repeat url("/static/image/icon/show.png");
+    background-size: 100%;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_export {
+    width: 36px;
+    height: 36px;
+    background: center no-repeat url("/static/image/icon/ic_export.png");
+    background-size: 100%;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_line {
+    width: 34px;
+    height: 34px;
+    background: center no-repeat url("/static/image/icon/ic_line.png");
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: solid 1px #e5e5e5;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_upload {
+    width: 36px;
+    height: 36px;
+    background: url('/modules/portal/static/image/icon/ic_upload.png') no-repeat 10px center;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_download {
+    width: 36px;
+    height: 36px;
+    background: url('/modules/portal/static/image/icon/ic_download.png') no-repeat 10px center;
+    cursor: pointer;
+    margin-top: 15px;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_add {
+    width: 36px;
+    height: 36px;
+    background: center no-repeat url("/static/image/customer/ic_add.png");
+    background-size: 100%;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.ic_del {
+    width: 36px;
+    height: 36px;
+    background: center no-repeat url("/static/image/customer/ic_del.png");
+    background-size: 100%;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        opacity: 0.5;
+    }
+}

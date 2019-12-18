@@ -1,0 +1,183 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+.mix-no-border .el-input__inner{
+  height: 34px!important;
+  border:none!important;
+}
+.mix-input .el-input__inner,.mix-input.el-input__inner{
+  height: 36px;
+	border-radius: 2px;
+	border: solid 1px #dddddd;
+  font-family: MicrosoftYaHei;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+}
+.mix-input.el-range-editor .el-range-input{
+  height: 30px;
+  font-family: MicrosoftYaHei;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+}
+.mix-input.el-range-editor.is-active{
+  border: solid 1px #4162ff;
+}
+.mix-input .el-textarea__inner{
+  border-radius: 2px;
+	border: solid 1px #dddddd;
+}
+.mix-select .el-input__inner{
+  width: 100%;
+  height: 36px;
+  border-radius: 2px;
+	border: solid 1px #dddddd;
+  font-family: MicrosoftYaHei;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+}
+.mix-input .el-input__inner:focus,.mix-input .el-textarea__inner:focus{
+  border: solid 1px #4162ff;
+}
+.mix-select.el-select .el-input.is-focus .el-input__inner,.mix-input.el-select .el-input__inner:focus{
+  border-color: #4162ff;
+}
+
+.mix-pagination.el-pagination .el-select .el-input .el-input__inner,.mix-pagination .el-pagination__editor.el-input .el-input__inner{
+  height: 28px;
+  line-height: 28px;
+  border-radius:2px;
+}
+.mix-pagination.el-pagination .el-select .el-input .el-input__inner:hover,.mix-pagination .el-select .el-input.is-focus .el-input__inner,.mix-pagination .el-pagination__editor.el-input .el-input__inner:focus{
+  border-color: #4162ff;
+}
+.mix-collapse .el-collapse-item__header{
+  border-bottom: none;
+  padding-left: 30px;
+  font-family: MicrosoftYaHei;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #111111;
+}
+.mix-collapse .el-collapse-item__header.is-active{
+  border-bottom: 1px solid #dddddd;
+}
+.mix-select .el-input__icon{
+  line-height: 28px;
+}
+.mix-select.el-select .el-input .el-select__caret{
+  font-weight: bold;
+  color: #333333;
+}
+.mix-input.el-date-editor .el-range__icon{
+  line-height: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+.mix-input .el-input__icon.el-icon-time{
+  line-height: 28px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.mix-input-32 .el-input__inner,.mix-input-32.el-input__inner,.mix-select-32 .el-input__inner{
+  height: 32px;
+}
+.mix-input-32.el-range-editor .el-range-input{
+  height: 26px;
+}
+.mix-input-32 .el-range-separator{
+  line-height: 24px;
+}
+.mix-no-border-32 .el-input__inner{
+  height: 30px!important;
+  border:none!important;
+}
+.mix-input.mix-no-right-border-radius,.mix-input.mix-no-right-border-radius .el-input__inner{
+  border-radius: 2px 0 0 2px;
+}
+
+.mix-pagination li.number{
+  background-color: #ffffff;
+}
+.mix-pagination li.number.active,.mix-pagination.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background-color: #4162ff;
+}
+.mix-el-table table th{
+  background-color: #ececec;
+  height: 40px;
+  line-height: 40px;
+  font-family: MicrosoftYaHei;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333333;
+  text-align: left;
+  border-right: 1px solid #ffffff;
+  padding: 0;
+}
+.mix-el-table table td{
+  height: 48px;
+  padding: 0;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: MicrosoftYaHei;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: #777777;
+}
+.mix-el-talbe.el-table--striped .el-table__body tr.el-table__row--striped td{
+  background-color: #f9f9f9;
+}
+.mix-el-table.el-table th.is-leaf{
+  border-bottom: none;
+}
+
+.el-upload--picture-card{
+  width: 80px!important;
+  height: 80px!important;
+  line-height: 80px!important;
+  border-radius: 2px!important;
+}
+.el-upload-list--picture-card .el-upload-list__item{
+  width: 80px!important;
+  height: 80px!important;
+  border-radius: 2px!important;
+}
+.el-select{
+  width: 100%;
+}
+table th{
+  font-weight: normal;
+}
+/* 单选框 */
+.el-radio__label,.el-radio__input.is-checked+.el-radio__label{
+  color:#666666;
+}

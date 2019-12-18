@@ -1,0 +1,401 @@
+/******************************************************************************
+ * Copyright (c) 2019-2021 Mixlinker Networks Inc. <mixiot@mixlinker.com>
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Application License of Mixlinker Networks License and Mixlinker
+ * Distribution License which accompany this distribution.
+ *
+ * The Mixlinker License is available at
+ *    http://www.mixlinker.com/legal/license.html
+ * and the Mixlinker Distribution License is available at
+ *    http://www.mixlinker.com/legal/distribution.html
+ *
+ * Contributors:
+ *    Mixlinker Technical Team
+ *****************************************************************************/
+@import "../../sass/common.scss";
+.cont-box {
+    flex: 1;
+    padding: 16px;
+    overflow: hidden;
+    position: relative;
+    .top-box {
+        width: 100%;
+        flex: 14;
+        min-height: 88.8px;
+        .box {
+            flex: 1;
+            height: 100%;
+        }
+        .top-one {
+            flex: 1;
+            height: 100%;
+            background: #ffffff;
+            @include flex-pack-center();
+            .top-one-icon {
+                width: 62px;
+                height: 62px;
+                background: url($path+"/modules/pro/static/images/index/customer-icon.png") no-repeat center center;
+                background-color: #4162ff;
+                border-radius: 31px;
+                margin-right: 20px;
+            }
+            .top-one-right {
+                .num {
+                    font-family: Microsoft YaHei;
+                    font-size: 28px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 1px;
+                    color: #4162ff;
+                }
+                .name {
+                    font-family: MicrosoftYaHei;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                    color: #888888;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .top-two {
+            flex: 1;
+            height: 100%;
+            background: #ffffff;
+            margin-left: 16px;
+            @include flex-pack-center();
+            .top-two-icon {
+                width: 62px;
+                height: 62px;
+                background: url($path+"/modules/pro/static/images/index/equipment-icon.png") no-repeat center center;
+                background-color: #3bbc6a;
+                border-radius: 31px;
+                margin-right: 20px;
+            }
+            .top-two-right {
+                .num {
+                    font-family: Microsoft YaHei;
+                    font-size: 28px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 1px;
+                    color: #37ba6a;
+                }
+                .name {
+                    font-family: MicrosoftYaHei;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                    color: #888888;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .top-three {
+            flex: 2;
+            height: 100%;
+            @include flex-pack-center();
+            margin-left: 16px;
+            background: #fff;
+            overflow: hidden;
+            .com-div {
+                flex: 1;
+                text-align: left;
+                @include flex-pack-center();
+                align-items: center;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0 10px;
+                .com{
+                  overflow:hidden;
+                }
+                .num {
+                    font-family: Microsoft YaHei;
+                    font-size: 28px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 1px;
+                    color: #666666;
+                }
+                .name {
+                    font-family: MicrosoftYaHei;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 0px;
+                    color: #888888;
+                    margin-top: 10px;
+                    overflow:hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            .split-line {
+                width: 1px;
+                height: 30px;
+                background-color: #eeeeee;
+            }
+        }
+    }
+    .net-box {
+        flex: 40;
+        margin-top: 16px;
+        overflow: hidden;
+        .net-one {
+            height: 100%;
+            flex: 1;
+            background: #fff;
+            .title {
+                font-family: MicrosoftYaHei;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #111111;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #dddddd;
+                p {
+                    margin-left: 20px;
+                    margin-top: 0px;
+                }
+            }
+            .distributed {
+                width: 100%;
+                .pic {
+                    flex: 1;
+                }
+                .progress {
+                    width: 60%;
+                    @include flex-pack-center();
+                    align-items: center;
+                    .item {
+                        height: 24px;
+                        width: 100%;
+                        @include flex-pack-justify();
+                        align-items: center;
+                        .info{
+                          min-width: 100px;
+                        }
+                        &>div.flex-wrap{
+                          align-items: center;
+                        }
+                        i.icon {
+                            display: inline-block;
+                            width: 8px;
+                            height: 8px;
+                            border: 2px solid #4162ff;
+                            border-radius: 50% 50%;
+                            vertical-align: middle;
+                        }
+                        .name {
+                            font-family: MicrosoftYaHei;
+                            font-size: 12px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            line-height: 28px;
+                            letter-spacing: 0px;
+                            color: #888888;
+                        }
+                        .value {
+                            font-family: Microsoft YaHei;
+                            font-size: 14px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            line-height: 28px;
+                            letter-spacing: 0px;
+                            color: #666666;
+                        }
+                        span {
+                            display: inline-block;
+                            line-height: 14px;
+                            vertical-align: middle;
+                            margin-left: 3%;
+                            @include overEllipsis();
+                            &.bar {
+                                width: 30%;
+                                height: 6px;
+                                background-color: #eff2f7;
+                                position: relative;
+                                margin-left: 15%;
+                                border-radius: 2px;
+                                i {
+                                    position: absolute;
+                                    background-color: #4162ff;
+                                    height: 6px;
+                                    border-radius: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .net-two {
+            flex: 2;
+            background: #fff;
+            height: 100%;
+            margin-left: 16px;
+            overflow: hidden;
+            .title {
+                font-family: MicrosoftYaHei;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #111111;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #dddddd;
+                p {
+                    margin-left: 20px;
+                    margin-top: 0px;
+                }
+            }
+            .statistics {
+                width: 100%;
+            }
+        }
+    }
+    .buttom-div {
+        flex: 45;
+        margin-top: 16px;
+        overflow: hidden;
+        .buttom-one {
+            height: 100%;
+            flex: 1;
+            background: #fff;
+            .title {
+                font-family: MicrosoftYaHei;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #111111;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #dddddd;
+                p {
+                    margin-left: 20px;
+                    margin-top: 0px;
+                }
+            }
+            .service-statistics {
+                width: 100%;
+            }
+        }
+        .buttom-two {
+            flex: 2;
+            height: 100%;
+            margin-left: 16px;
+            overflow: hidden;
+            background: #fff;
+            .title {
+                position: relative;
+                font-family: MicrosoftYaHei;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #111111;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #dddddd;
+                p {
+                    margin-left: 20px;
+                    margin-top: 0px;
+                }
+                .map-full-screen-btn {
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    margin-top: -8px;
+                    width: 16px;
+                    height: 16px;
+                    background: url($path+'/modules/pro/static/images/index/full-screen-icon.png') no-repeat center center;
+                    cursor: pointer;
+                }
+            }
+            .map-box {
+                flex: 1;
+                .map {
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                    @include flex-pack-center();
+                    align-items: center;
+                    .map-container {
+                        width: 95%;
+                        height: 90%;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bdmap-full-screen {
+    z-index: 1000;
+    position: absolute;
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    top: 16px;
+    left: 16px;
+    background: #ffffff;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    .title {
+        position: relative;
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        height: 50px;
+        line-height: 50px;
+        letter-spacing: 0px;
+        color: #111111;
+        border-bottom: 1px solid #dddddd;
+        p {
+            margin-left: 20px;
+            margin-top: 0px;
+        }
+        .map-full-screen-btn {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            margin-top: -8px;
+            width: 16px;
+            height: 16px;
+            background: url($path+'/modules/pro/static/images/index/full-screen-icon.png') no-repeat center center;
+            cursor: pointer;
+        }
+    }
+    .map-box {
+        flex: 1;
+        padding: 20px;
+        .map {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            @include flex-pack-center();
+            align-items: center;
+            .map-container {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+    }
+}
