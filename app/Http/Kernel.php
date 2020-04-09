@@ -62,10 +62,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin.auth' => \Modules\Admin\Http\Middleware\AdminAuth::class,
         'admin.api' => \Modules\Admin\Http\Middleware\MixApi::class,
-        'worksAuth' => \Modules\Work\Http\Middleware\ExtAuth::class,
-        'messengerAuth' => \Modules\Messenger\Http\Middleware\MessengerAuth::class,
-        'reportAuth' => \Modules\Report\Http\Middleware\ReportAuth::class,
-        'mix.auth' => \Modules\Diag\Http\Middleware\MixAuth::class,
     ];
 
     /**

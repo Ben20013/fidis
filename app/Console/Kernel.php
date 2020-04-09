@@ -4,15 +4,8 @@ namespace App\Console;
 
 use App\Console\Commands\TaskDiag;
 use Illuminate\Support\Facades\Log;
-use Modules\Report\Models\Output;
-use Modules\Report\Models\Project;
-use Modules\Report\Services\EmailService;
-use Modules\Report\Services\ParseJsonService;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Modules\Messenger\Models\Route;
-use Modules\Messenger\Services\Cron\StartService;
-use Modules\Work\Services\CronService;
 
 class Kernel extends ConsoleKernel
 {
@@ -42,10 +35,6 @@ class Kernel extends ConsoleKernel
         // 动态定时任务
         $this->pushCommands();
         $this->runSchedule($schedule);
-        $this->msgschedule($schedule);//推送定时任务
-        $this->repschedule($schedule);//报表定时任务
-        $this->workschedule($schedule);//维保定时任务
-        $this->diagschedule($schedule);//一键体检定时任务
     }
 
     /**

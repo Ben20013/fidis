@@ -1109,13 +1109,8 @@
             ],
             "authors": [{
                 "name": "Luís Otávio Cobucci Oblonczyk",
-                <<
-                << << < HEAD "email": "lcobucci@gmail.com",
-                "role": "Developer" ===
-                    === =
-                    "role": "Developer",
-                "email": "lcobucci@gmail.com" >>>
-                    >>> > ec2336deb3a39b86b3733651f65533ddba035268
+                "role": "Developer",
+                "email": "lcobucci@gmail.com"
             }],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
             "keywords": [
